@@ -1,0 +1,12 @@
+
+
+.header{
+    postion: absolute;
+
+    height: 30%;
+    width: 100%;
+}
+
+.header-background{
+    background-color: var(--canopy-green);
+}

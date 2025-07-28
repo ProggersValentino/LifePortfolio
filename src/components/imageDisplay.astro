@@ -1,0 +1,16 @@
+
+---
+interface Props {
+    divclassName?: string,
+}
+
+const {divclassName =""} = Astro.props;
+const source = Astro.props;
+const alt = Astro.props;
+---
+
+<div className={divclassName} style={{
+    overflow: "hidden"
+}}>
+    <img className={"object-fill object-center"} src={source} alt={alt}></img>
+</div>

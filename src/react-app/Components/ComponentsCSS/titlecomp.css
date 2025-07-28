@@ -1,0 +1,16 @@
+
+.defaultTitle{
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: #313E49 3px 3px 3px;
+    padding: 1.5%;
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+.cardTitle{
+    text-shadow: #313E49 5px 5px 5px;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

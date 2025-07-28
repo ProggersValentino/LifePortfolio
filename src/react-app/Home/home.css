@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+
+.goldenChildren{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /*grid-template-columns: repeat(auto-fill, minmax(300px, 700px));*/
+/*    grid-template-rows: repeat(auto-fill, minmax(200px, 300px));*/
+    gap: 15px;
+}
+
+.overview{
+    display: flex;
+    padding: 5%;
+    width: 100%;
+    gap: 10px;
+   }
+
+.education{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 0.01fr));*/
+    gap: 15px;
+}

@@ -1,0 +1,28 @@
+
+:root{
+    /* 🌿 Greens */
+    --moss-green: #6A994E;
+    --fern-green: #386641;
+    --canopy-green: #2A4F3E;
+
+    /* 🌰 Earth */
+    --tree-bark: #5B4330;
+    --chestnut-tan: #A47149;
+    --soil-umber: #7B5E42;
+
+    /* 🌫️ Neutrals */
+    --pine-smoke: #B9C4B3;
+    --foggy-pearl: #DFE8DA;
+    --mushroom-white: #F3F1EA;
+    --charcoal: #313E49;
+
+    /* ☀️ Accents */
+    --sun-ray: #F4D35E;
+    --amber-sap: #EECF6D;
+    --golden-sap: #DAB785;
+    --lichen-beige: #E6D9B5;
+    --berry-red: #943D2E;
+
+    /* 🎓 QUT */
+    --qut-blue: #004B87;
+}

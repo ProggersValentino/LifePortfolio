@@ -1,0 +1,7 @@
+
+.navBarHori{
+    display: flex;
+    padding-left: 10%;
+    padding-top: 2%;
+    gap: 20px;
+}

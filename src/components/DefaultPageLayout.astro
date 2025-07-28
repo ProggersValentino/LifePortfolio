@@ -1,0 +1,19 @@
+---
+import {HeaderComponent} from "../react-app/Components/HeaderComponent";
+import {FooterComponent} from "../react-app/Components/FooterComponent";
+import {HomePage} from "../react-app/Home/homePort";
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title></title>
+</head>
+<body>
+<HeaderComponent client:load/>
+    <slot /> <!--slots in other comps-->
+<FooterComponent client:load/>
+</body>
+</html>
