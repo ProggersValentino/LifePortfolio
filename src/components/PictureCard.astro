@@ -2,15 +2,16 @@
 import {useState} from "react";
 import {animated, useSpring} from "@react-spring/web";
 import {OneActionButton} from "../react-app/Components/ButtonComponent";
+
 import {CardTitleCustomClass} from "../react-app/Components/TitleComponent";
 import {DefaultParagraph} from "../react-app/Components/ParagraphComponent";
-import DefaultImage from "./DefaultImage.astro";
-
 const [flip, setFlip] = useState(true);
 const [hover, setHover] = useState(false);
+import DefaultImage from "./DefaultImage.astro";
 
-
-const title = Astro.props;
+const backContent = Astro.props;
+const imgWidth = Astro.props;
+const imgHeight = Astro.props;
 const imgSrc = Astro.props;
 const alt = Astro.props;
 const path = Astro.props;
@@ -36,10 +37,10 @@ const hoverSwitch = () => {
 }
 ---
 
-<div onmouseenter={hoverSwitch} onmouseleave={hoverSwitch} class="card rounded-lg"
+<div onMouseEnter={hoverSwitch} onMouseLeave={hoverSwitch} class="card rounded-lg"
      style = {{
-         /*width: imgWidth,
-         height: imgHeight,*/
+         width: imgWidth,
+         height: imgHeight,
      }}>
 
     {/*button to flip */}
@@ -55,7 +56,6 @@ const hoverSwitch = () => {
 
         <a href={path} className={"relative"}>
             <DefaultImage source={imgSrc} alt={alt} />
-            <CardTitleCustomClass title={title} className="absolute bottom-10 left-10 w-full" />
         </a>
 
 
@@ -77,4 +77,3 @@ const hoverSwitch = () => {
 
 
 </div>
-

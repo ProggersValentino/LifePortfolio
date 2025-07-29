@@ -1,17 +1,19 @@
 
 ---
 import {Image} from 'astro:assets';
-import pfp from "../images/portfoliophoto.jpg"
+import pfp from "../assets/portfoliophoto.jpg"
 
 interface Props {
-    divclassName?: string,
+    divclassName: string,
+    source: string,
+    alt: string,
 }
 
-const {divclassName =""} = Astro.props;
-const source = Astro.props;
-const alt = Astro.props;
+const {divclassName=""} = Astro.props;
+const {source} = Astro.props;
+const {alt} = Astro.props;
 ---
 
-<div class="{divclassName}">
+<div class={divclassName} style="overflow: hidden;">
     <Image class="object-fill object-center" src={source} alt={alt} />
 </div>

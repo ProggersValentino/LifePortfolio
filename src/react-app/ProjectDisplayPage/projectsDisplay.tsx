@@ -1,6 +1,6 @@
 
 import {projects} from "../data/projectData";
-import pic from "../../images/portfoliophoto.jpg"
+import pic from "../../assets/portfoliophoto.jpg"
 import {TagFilterSearch} from "../Components/tagFilterSearch";
 import {useState} from "react";
 

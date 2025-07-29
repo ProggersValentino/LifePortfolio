@@ -1,4 +1,4 @@
-import QUTLogo from "../../images/QUTLogo.png"
+import QUTLogo from "../../assets/QUTLogo.png"
 
 
 export const educationData = [
