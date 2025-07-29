@@ -1,0 +1,17 @@
+
+---
+import {Image} from 'astro:assets';
+import pfp from "../images/portfoliophoto.jpg"
+
+interface Props {
+    divclassName?: string,
+}
+
+const {divclassName =""} = Astro.props;
+const source = Astro.props;
+const alt = Astro.props;
+---
+
+<div class="{divclassName}">
+    <Image class="object-fill object-center" src={source} alt={alt} />
+</div>

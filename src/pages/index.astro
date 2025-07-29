@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css'
 import DefaultPageLayout from '../components/DefaultPageLayout.astro'
-import {HomePage} from "../react-app/Home/homePort";
+import DefaultImage from '../components/DefaultImage.astro'
+import HomePage from "../components/HomePage.astro";
 ---
 
 <DefaultPageLayout>
-	<HomePage/>
+	<!--<DefaultImage client:load/>-->
+	<HomePage client:load/>
 </DefaultPageLayout>
 
 

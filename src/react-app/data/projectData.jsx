@@ -1,6 +1,6 @@
 /*The purpose of this is to store all data to make up a project*/
-import tantrum from "../Projects/tantrum/tANTrumMain.png"
-import gngImg from "../Projects/GritNGlory/gngImg.png"
+import tantrum from "../../images/tANTrumMain.png"
+import gngImg from "../../images/gngImg.png"
 
 export class ProjectInfo{
 
