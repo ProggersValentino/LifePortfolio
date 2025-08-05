@@ -8,7 +8,7 @@ import "./ComponentsCSS/cardcomp.css"
 
 
 /*TODO: make it take it in only the project type and not 50 different inputs*/
-export function DefaultCard({ title, imgSrc, alt, path, imgWidth, imgHeight }) {
+export function DefaultCard({ title, imgSrc, alt, path }) {
 
     const [flip, setFlip] = useState(true);
     const [hover, setHover] = useState(false);
@@ -53,7 +53,7 @@ export function DefaultCard({ title, imgSrc, alt, path, imgWidth, imgHeight }) {
 
                 <a href={path} className={"relative"}>
                     <DefaultImg source={imgSrc} alt={alt} />
-                    <CardTitleCustomClass title={title} className={"absolute bottom-10 left-10 w-full"} />
+                    <CardTitleCustomClass title={title} className={"absolute bottom-5 left-5 w-full"} />
                 </a>
 
 
@@ -68,7 +68,7 @@ export function DefaultCard({ title, imgSrc, alt, path, imgWidth, imgHeight }) {
 
 
                 <a href={path}>
-                    <DefaultParagraph para={"the information on this is kinda back but dont worry it gets better as I write out this small brief so " +
+                    <DefaultParagraph className={"text-[10px] md:text-2xl"} para={"the information on this is kinda back but dont worry it gets better as I write out this small brief so " +
                         "stay tuned from some cool information "}/>
                 </a>
             </animated.div>
@@ -80,7 +80,7 @@ export function DefaultCard({ title, imgSrc, alt, path, imgWidth, imgHeight }) {
     )
 }
 
-export function PictureCard({ backContent, imgSrc, alt, path}) {
+export function PictureCard({ backContent, imgSrc, alt, path, imgWidth, imgHeight}) {
 
     const [flip, setFlip] = useState(true);
     const [hover, setHover] = useState(false);
@@ -108,8 +108,8 @@ export function PictureCard({ backContent, imgSrc, alt, path}) {
     return(
         <div onMouseEnter={hoverSwitch} onMouseLeave={hoverSwitch} className={"card rounded-lg"}
              style = {{
-                 /*width: imgWidth,
-                 height: imgHeight,*/
+                 width: imgWidth,
+                 height: imgHeight,
              }}>
 
             <OneActionButton className={"absolute top-[5%] right-5 z-50 w-5 h-5 grow"} actionEvent={handleFlip} />
@@ -141,7 +141,7 @@ export function PictureCard({ backContent, imgSrc, alt, path}) {
 
 
                 <a href={path} className={"relative"}>
-                    <DefaultParagraph para={backContent}/>
+                    <DefaultParagraph className={"text-[10px]"} para={backContent}/>
                 </a>
             </animated.div>
 

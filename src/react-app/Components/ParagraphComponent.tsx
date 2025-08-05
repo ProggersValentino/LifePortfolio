@@ -1,17 +1,17 @@
 import "./ComponentsCSS/paracomp.css"
 
 
-export function DefaultParagraph({para}: {para?: string})
+export function DefaultParagraph({className="", para})
 {
     return (
-        <p>{para}</p>
+        <p className={`${className}`}>{para}</p>
     )
 }
 
-export function SmallSideParagraph({para}: {para?: string}) {
+export function SmallSideParagraph({className, para}) {
     return (
-        <div className={"sidePara"}>
-            <p>{para}</p>
+        <div className={"sidePara "}>
+            <p className={`${className}`}>{para}</p>
         </div>
 
     )

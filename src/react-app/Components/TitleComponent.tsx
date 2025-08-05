@@ -8,10 +8,10 @@ export function DefaultTitle({title, className=""})
     )
 }
 
-export function HomeTitle({title}: {title?: string})
+export function HomeTitle({className, title})
 {
     return (
-        <header className={"defaultTitle"}>{title}</header>
+        <header className={`defaultTitle ${className}`}>{title}</header>
     )
 }
 

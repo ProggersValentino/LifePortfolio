@@ -21,7 +21,7 @@ export function OneActionButton({actionEvent, className = ""}) {
     }
 
     return(
-            <animated.button className={`bg-blue-500 ${className}`} onClick={actionEvent} onMouseEnter={toggle} onMouseLeave={toggle}
+            <animated.button id={"button"} className={`bg-blue-500 ${className}`} onClick={actionEvent} onMouseEnter={toggle} onMouseLeave={toggle}
                              style={{
                 opacity
 

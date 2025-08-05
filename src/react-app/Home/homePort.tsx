@@ -3,7 +3,7 @@ import {DefaultTitle} from "../Components/TitleComponent.tsx";
 import {DefaultImg} from "../Components/ImageComponent";
 import portfolioImg from "../../assets/portfoliophoto.jpg"
 import {SmallSideParagraph} from "../Components/ParagraphComponent";
-import {projects} from "../data/projectData";
+import {projects} from "../../lib/data/projectData";
 
 import "./home.css"
 import {educationData} from "../data/educationData.jsx"

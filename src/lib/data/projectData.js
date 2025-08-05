@@ -1,10 +1,6 @@
 /*The purpose of this is to store all data to make up a project*/
-import tantrum from "../../assets/tANTrumMain.png"
-import gngImg from "../../assets/gngImg.png"
-
-export class ProjectInfo{
-
-}
+import tantrum from '../../assets/tANTrumMain.png'
+import gngImg from '../../assets/gngImg.png'
 
 /*make sure to always export data so it can be called without it will error */
 export const projects = [

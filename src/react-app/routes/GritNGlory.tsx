@@ -1,6 +1,6 @@
 import {Tag} from "../Components/TagComponent"
 import {DefaultTitle} from "../Components/TitleComponent";
-import {projects} from "../data/projectData"
+import {projects} from "../../lib/data/projectData"
 import {DefaultParagraph} from "../Components/ParagraphComponent";
 import {GNGLayout} from "../Projects/GritNGlory/GritNGlory"
 

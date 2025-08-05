@@ -3,10 +3,11 @@ import {HomeTitle} from "../react-app/Components/TitleComponent.tsx";
 import {DefaultTitle} from "../react-app/Components/TitleComponent.tsx";
 import DefaultImage from "./DefaultImage.astro";
 import portfolioImg from "../assets/portfoliophoto.jpg"
+import qut from "../assets/QUTLogo.png"
 import {SmallSideParagraph} from "../react-app/Components/ParagraphComponent";
-import {projects} from "../react-app/data/projectData";
-import DefaultCard from "./CardComponent.astro"
-import PictureCard from "./PictureCard.astro"
+import {projects} from "../lib/data/projectData.js";
+import {DefaultCard, PictureCard} from "../react-app/Components/CardComponent"
+
 
 import "../react-app/Home/home.css"
 import {educationData} from "../react-app/data/educationData.jsx"
@@ -16,50 +17,76 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
 ---
 
 <>
-    <HomeTitle title={"Welcome to Peter's Portfolio"} />
+   <!-- <HomeTitle title={"Welcome to Peter's Portfolio"} />-->
 
-    <div class="w-100 overview">
-        <DefaultImage divclassName={"w-100 md:max-w-lg border-[var(--soil-umber)] border-9 rounded rounded-2xl " +
-            "md:shadow-xl/30 shadow-[var(--sun-ray)]"} source={portfolioImg} alt={"Portfolio Photo"} />
-        <div class="inset-shadow-sm/50 p-10">
-            <SmallSideParagraph para ={"A man who !loves programming based on the Gold Coast"} />
+    <div class="w-100 overview justify-center">
+        <DefaultImage divclassName={"w-100 h-full shadow-sm md:max-w-lg border-[var(--soil-umber)] border-9 rounded rounded-2xl " +
+            "md:shadow-xl/50 shadow-[var(--sun-ray)]"} source={portfolioImg} alt={"Portfolio Photo"} />
+        <div class="h-full">
+            <div class="basis-[70%] md:shadow-xl/30 shadow-[var(--sun-ray)] p-10">
+                <SmallSideParagraph className={"text-[15px] md:text-xl"} para ={"A man who !loves programming the Gold Coast"} />
+            </div>
+            <div class="basis-[30%] align-middle w-full h-full">
+                <PictureCard path={"www.qut.com"} imgSrc={qut} alt="dasda" backContent={"yes"}
+                imgWidth={100} imgHeight={100} client:load/>
+            </div>
+
         </div>
 
     </div>
 
-    <div className={"wood-container md:rounded-2xl h-full"}>
-                <div className={"bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl"}>
-                    <DefaultTitle className={"text-[var(--amber-sap)]   text-shadow-[var(--charcoal)]"} title={"Golden Child Projects"} />
+    <div class="wood-container md:rounded-2xl h-full">
+                <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
+                    <DefaultTitle className={"text-[var(--amber-sap)] text-shadow-[var(--charcoal)]"} title={"Golden Child Projects"} client:load/>
                 </div>
 
 
-                <div className={"goldenChildren h-full grid-cols-1 md:grid-cols-3 md:w-full p-5"}>
-                    grabs and displays all projects that are tagged goldenchild
+                <div class="goldenChildren h-full grid-cols-1 md:grid-cols-3 md:w-full p-5">
+                    <!--grabs and displays all projects that are tagged goldenchild-->
                     {goldenChildren.map (golden => (
-                        <DefaultCard key={golden} title={golden.title} imgSrc={golden.thumbnailPic} alt={golden.title}
-                                     path={golden.path} imgHeight={200} imgWidth={400} />
+                        <DefaultCard title={golden.title} imgSrc={golden.thumbnailPic} alt={golden.title}
+                                     path={golden.path} client:load/>
                     ))}
                 </div>
-
             </div>
 
-            <!--<div className={"wood-container md:rounded-2xl h-full"} style={{
+            <div class="wood-container md:rounded-2xl h-full" style={{
                 marginTop: "5%",
                 marginBottom: "5%",
                 }}>
 
-                <div className={"bg-[var(&#45;&#45;chestnut-tan)] outline-4 outline-[var(&#45;&#45;soil-umber)] rounded-t-2xl"}>
-                    <DefaultTitle className={"text-[var(&#45;&#45;amber-sap)]"} title={"Education/Experience"} />
+                <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
+                    <DefaultTitle className={"text-[var(--amber-sap)]"} title={"Education/Experience"} client:load/>
                 </div>
 
 
-                <div className={"education h-full grid-cols-1 md:grid-cols-5 md:w-full p-5"}>
+                <div class="education h-full grid-cols-3 md:grid-cols-5 md:w-full p-5">
                     {educationData.map (education => (
                         <PictureCard backContent={education.name} imgSrc={education.imgSrc} alt={education.name}
-                                     path={education.uri} />
+                                     path={education.uri} imgWidth={125} imgHeight={125} client:load/>
                     ))}
 
                 </div>
-            </div>-->
+            </div>
 
+    </div>
+
+  <!--  <div class="wood-container md:rounded-2xl h-full" style={{
+        marginTop: "5%",
+        marginBottom: "5%",
+    }}>
+
+        <div className={"bg-[var(&#45;&#45;chestnut-tan)] outline-4 outline-[var(&#45;&#45;soil-umber)] rounded-t-2xl"}>
+            <DefaultTitle className={"text-[var(&#45;&#45;amber-sap)]"} title={"Socials"} />
+        </div>
+
+
+        <div className={"education h-full grid-cols-3 md:grid-cols-5 md:w-full p-5"}>
+            {educationData.map (education => (
+                    <PictureCard backContent={education.name} imgSrc={education.imgSrc} alt={education.name}
+                                 path={education.uri} imgWidth={125} imgHeight={125} client:load/>
+            ))}
+
+        </div>
+-->
 </>

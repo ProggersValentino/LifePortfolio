@@ -6,7 +6,7 @@ export function DefaultImg({source, alt, divclassName = ""}) {
         <div className={divclassName} style={{
             overflow: "hidden"
         }}>
-            <img className={"object-fill object-center"} src={source} alt={alt}></img>
+            <img className={"object-fill object-center"} src={source.src} alt={source.alt}></img>
         </div>
     )
 }
