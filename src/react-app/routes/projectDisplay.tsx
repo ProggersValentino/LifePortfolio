@@ -1,4 +1,4 @@
-import {AllProjectDisplayPage} from "~/ProjectDisplayPage/projectsDisplay";
+import {AllProjectDisplayPage} from "../ProjectDisplayPage/projectsDisplay";
 
 export default function DisplayProjects(){
     return(

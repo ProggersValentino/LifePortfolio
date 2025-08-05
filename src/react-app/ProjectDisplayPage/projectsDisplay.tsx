@@ -1,8 +1,9 @@
 
 import {projects} from "../../lib/data/projectData";
 import pic from "../../assets/portfoliophoto.jpg"
-import {TagFilterSearch} from "../Components/tagFilterSearch";
+import {TagFilterSearch} from "../Components/tagFilterSearch.tsx";
 import {useState} from "react";
+import {DefaultCard} from "../Components/CardComponent";
 
 export function AllProjectDisplayPage(){
 
