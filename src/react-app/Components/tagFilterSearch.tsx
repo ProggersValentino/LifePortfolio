@@ -1,19 +1,21 @@
-import { useState } from "react";
-import {Col, Form} from 'react-bootstrap'
-import {projectTags} from "~/data/projectData";
-import {roleTags} from "~/data/projectData";
-import {animated} from "@react-spring/web";
+import {type Ref, useEffect, useRef, useState} from "react";
+import '../../styles/global.css'
+import {projectTags} from "../data/projectData";
+import {roleTags} from "../data/projectData";
+import {animated, useSpring} from "@react-spring/web";
 
 
 export function TagFilterSearch({projectfilterTags, roleFilteredTags, getterRoles, getterProjects}) {
     const [field, setField] = useState([])
 
     return(
-       <>
-           <ExtractTags title={"Project Filters"} tagSet={projectTags} tags={projectfilterTags} getterTags={getterProjects}/>
-           <ExtractTags title={"Role Filters"} tagSet={roleTags} tags={roleFilteredTags} getterTags={getterRoles}/>
+       <div className={""}>
+           <div className={""}>
+               <ExtractTags title={"Project Filters"} tagSet={projectTags} tags={projectfilterTags} getterTags={getterProjects}/>
+               <ExtractTags title={"Role Filters"} tagSet={roleTags} tags={roleFilteredTags} getterTags={getterRoles}/>
+           </div>
 
-       </>
+       </div>
 
 
     )
@@ -23,6 +25,20 @@ export function TagFilterSearch({projectfilterTags, roleFilteredTags, getterRole
 
 function ExtractTags({title, tagSet, tags, getterTags}) {
 
+    const divRef : Ref<any> = useRef(null);
+
+    const [height, setHeight] = useState(0);
+
+    const [isVisible, setVisible] = useState(false)
+
+    const {transform} = useSpring({
+        transform: isVisible ? `translateY(${-height - 10})` : 'translateY(0px)',
+        config: {duration: 200}
+    })
+
+    const toggleVisibility = () => {
+        setVisible((visible) => !visible)
+    }
 
     const addTagToFilter = (tag : string) => {
         tags(prev => [...prev, tag]);
@@ -32,26 +48,38 @@ function ExtractTags({title, tagSet, tags, getterTags}) {
     /*filter out tags that are already selected for filtering*/
     const filteredActive = tagSet.filter(tag => !getterTags.includes(tag) )
 
+    useEffect(() => {
+       if(divRef.current) setHeight(divRef.current.offsetHeight);
+    }, []);
 
     return (
-        <>
-            <div className="mb-3"
+        <div style={{
+            overflow: 'hidden',
+        }}>
+            <animated.div onClick={toggleVisibility} className="mb-3 bg-amber-950 z-10 "
              style={{
+                zIndex: 40,
                  display: 'flex'
              }}>
-                <h1>{title + ":"} </h1>
+                <h1>{title} </h1>
                 <DisplaySelection selectedTags={getterTags} tagSet={tags}/>
-            </div>
+            </animated.div>
 
-            {filteredActive.map((tag : string) => (
-                <div className="form-check">
+            <animated.div ref={divRef} className={"wood-container z-1"} style={{
+                zIndex: 10,
+                visibility: !isVisible ? 'hidden' : 'visible',
+            }}>
+                {filteredActive.map((tag : string) => (
+                    <div className="form-check">
 
-                    <animated.button onClick={() => addTagToFilter(tag)}>
-                        {tag}
-                    </animated.button>
-                </div>
-            ))}
-        </>
+                        <animated.button onClick={() => addTagToFilter(tag)}>
+                            {tag}
+                        </animated.button>
+                    </div>
+                ))}
+
+            </animated.div>
+        </div>
     )
 }
 

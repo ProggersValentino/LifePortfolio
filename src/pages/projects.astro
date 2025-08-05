@@ -1,5 +1,8 @@
 ---
+import '../styles/global.css'
 import DisplayProjects from "../react-app/routes/projectDisplay";
+import DefaultPageLayout from "../components/DefaultPageLayout.astro";
 ---
-
-<DisplayProjects client:load />
+<DefaultPageLayout>
+    <DisplayProjects client:load />
+</DefaultPageLayout>
