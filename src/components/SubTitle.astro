@@ -1,0 +1,15 @@
+---
+import "../styles/global.css"
+
+
+interface Props{
+    subTitleName:string,
+}
+
+const {subTitleName} = Astro.props
+
+---
+
+<div>
+    <h2 class={"font-bold subTitle"}>{subTitleName}</h2>
+</div>

@@ -9,11 +9,14 @@ import {HomePage} from "../react-app/Home/homePort";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title></title>
+    <title>Peter Erbeni</title>
 </head>
-<body>
+<body class="mr-[2%] ml-[2%] md:mr-[15%] md:ml-[15%]">
 <HeaderComponent client:load/>
+<main>
     <slot /> <!--slots in other comps-->
+</main>
+
 <FooterComponent client:load/>
 </body>
 </html>

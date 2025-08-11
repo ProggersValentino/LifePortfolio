@@ -1,3 +1,17 @@
 ---
+import "../styles/global.css"
+
+interface Props{
+    para:string,
+}
+
+const {para} = Astro.props;
+
 ---
+
+
+
+<div>
+    <p class="text-center">{para}</p>
+</div>
 

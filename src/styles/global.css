@@ -21,8 +21,7 @@
 
 html,
 body {
-    margin-left: 2%;
-    margin-right: 2%;
+
     @media (prefers-color-scheme: dark) {
         color-scheme: dark;
         background-color: var(--canopy-green);
@@ -30,6 +29,12 @@ body {
 }
 
 @layer components {
+
+    .subTitle{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
 
     .wood-container{
         background-color: var(--tree-bark);

@@ -9,11 +9,9 @@ interface Props {
     alt: string,
 }
 
-const {divclassName=""} = Astro.props;
-const {source} = Astro.props;
-const {alt} = Astro.props;
+const {divclassName="", source, alt} = Astro.props;
 ---
 
 <div class={divclassName} style="overflow: hidden;">
-    <Image class="object-fill object-center" src={pfp} alt={alt} loading="eager"/>
+    <Image class="object-fill object-center" src={source} alt={alt} loading="eager"/>
 </div>

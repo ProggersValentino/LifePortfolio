@@ -1,0 +1,14 @@
+---
+import "../styles/global.css"
+import "../react-app/Components/ComponentsCSS/titlecomp.css"
+
+interface Props{
+    title: string,
+    className: string,
+}
+
+const {title,className} = Astro.props;
+
+---
+
+<h1 class={"projectTitle justify-center"}>{title}</h1>

@@ -1,0 +1,81 @@
+---
+import { projects } from "../lib/data/projectData"
+import {DefaultTitle} from "../react-app/Components/TitleComponent";
+import SubTitle from "./SubTitle.astro";
+import DefaultImage from "./DefaultImage.astro";
+import DefaultPara from "./DefaultPara.astro";
+import ProjectTitle from "./ProjectTitle.astro";
+import "../styles/global.css"
+import {DefaultImg} from "../react-app/Components/ImageComponent";
+import { YouTube } from "astro-lazy-youtube-embed";
+
+interface Props{
+    projectToShow:string,
+    titleClass:string,
+}
+
+const {projectToShow, titleClass} = Astro.props;
+
+const filteredProject = projects.find((project)=> projectToShow === project.title);
+
+---
+
+<>
+    <ProjectTitle className={"defaultTitle text-xl"} title={projectToShow}/>
+
+    <div class="">
+
+        <div class="flex flex-wrap justify-center gap-2">
+            {filteredProject.tags.roleTag.map(tag =>
+                    <div class={"inline-block px-3 bg-[var(--tree-bark)] border-[var(--soil-umber)] rounded-xl border-4"} key={tag}>
+                        #{tag}
+                    </div>)}
+
+            {filteredProject.tags.projectTag.map(tag =>
+                    <div class="inline-block px-3 bg-[var(--tree-bark)] border-[var(--soil-umber)] rounded-xl border-4">
+                        #{tag}
+                    </div>)}
+        </div>
+
+    </div>
+
+    {filteredProject.sections.map((section) =>
+    <div class="py-4 w-full">
+        <div class="py-1">
+            {section.title == "" ? <></> : <SubTitle subTitleName={section.title}/>}
+        </div>
+
+        {section.introP == "" ? <></> :
+        <div>
+            <DefaultPara para={section.introP}/>
+        </div>}
+
+        {section.uri.linkType == "img" ?
+            (section.uri.link == "" ? <></> :
+
+                        <div class={"py-1 w-full flex justify-center"}}>
+                            <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
+                                        source={section.uri.link} alt={section.title}/>
+                        </div>
+            )
+            :
+            (section.uri.link == "" ? <></> :
+
+                        <div class="flex justify-center">
+                            <YouTube class={"rounded-2xl max-w-[900px]"} title={section.title} videoId={section.uri.link}/>
+                        </div>
+
+
+            )
+        }
+
+
+
+
+        <div class="py-1">
+            {section.p == "" ? <></> : <DefaultPara para={section.p}/>}
+        </div>
+
+
+    </div>)}
+</>

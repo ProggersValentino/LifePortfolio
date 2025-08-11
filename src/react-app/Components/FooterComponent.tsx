@@ -1,12 +1,8 @@
 
 export function FooterComponent() {
     return(
-        <div style={{
-
-        }}>
             <footer>
-                Foota
+                Copyright &copy; {new Date().getFullYear()}
             </footer>
-        </div>
     )
 }
