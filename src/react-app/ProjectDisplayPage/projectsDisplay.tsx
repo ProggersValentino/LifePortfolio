@@ -1,9 +1,9 @@
 
 import {projects} from "../../lib/data/projectData";
-import pic from "../../assets/portfoliophoto.jpg"
 import {TagFilterSearch} from "../Components/tagFilterSearch.tsx";
 import {useState} from "react";
 import {DefaultCard} from "../Components/CardComponent";
+import {DefaultTitle} from "../Components/TitleComponent.tsx";
 
 export function AllProjectDisplayPage(){
 
@@ -20,11 +20,11 @@ export function AllProjectDisplayPage(){
     roleFilteredTags.every(tag => project.tags.roleTag.includes(tag)));
     return (
         <main>
-            <h1> My Life's Work</h1>
+            <DefaultTitle title={"My Life's Work"} className={""} />
 
             <TagFilterSearch projectfilterTags={setProjectFilteredTags} roleFilteredTags={setRoleFilteredTags}
             getterProjects={projectFilteredTags} getterRoles={roleFilteredTags} />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
+            <div className=" wood-container h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
             style={{
                 display: "grid",
                 gridColumn: 'repeat(auto-fill, minmax(500px, 1fr))',
@@ -32,7 +32,7 @@ export function AllProjectDisplayPage(){
                 padding: '1rem'
             }}>
                 {roleFilteredProjects.map(project => (
-                    <DefaultCard title={project.title} imgSrc={pic} alt={project.title} path={project.path} />
+                    <DefaultCard title={project.title} imgSrc={project.thumbnailPic} alt={project.title} path={project.path} />
                 ))}
             </div>
 

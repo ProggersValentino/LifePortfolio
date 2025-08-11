@@ -37,6 +37,25 @@ body {
         border-radius: var(--radius-sm);
     }
 
+    .wood-container-filter{
+        background-color: var(--tree-bark);
+        border: 10px solid var(--soil-umber);
+        border-radius: var(--radius-lg);
+    }
+
+    .wood-container-filter-border{
+        border-right: 3px solid var(--soil-umber);
+        padding: 1.1%;
+    }
+
+    .wood-dropdown{
+        background-color: var(--tree-bark);
+        border: 10px solid var(--soil-umber);
+        border-radius: var(--radius-sm);
+        border-top: 5px solid var(--soil-umber);
+        top: 70%;
+    }
+
     .card{
         position: relative;
         display: flex;

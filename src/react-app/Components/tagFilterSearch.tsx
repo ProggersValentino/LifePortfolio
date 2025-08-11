@@ -1,7 +1,7 @@
 import {type Ref, useEffect, useRef, useState} from "react";
 import '../../styles/global.css'
-import {projectTags} from "../data/projectData";
-import {roleTags} from "../data/projectData";
+import {projectTags} from "../../lib/data/projectData";
+import {roleTags} from "../../lib/data/projectData";
 import {animated, useSpring} from "@react-spring/web";
 
 
@@ -9,8 +9,8 @@ export function TagFilterSearch({projectfilterTags, roleFilteredTags, getterRole
     const [field, setField] = useState([])
 
     return(
-       <div className={""}>
-           <div className={""}>
+       <div className={"relative"}>
+           <div className={"grid grid-col-2"}>
                <ExtractTags title={"Project Filters"} tagSet={projectTags} tags={projectfilterTags} getterTags={getterProjects}/>
                <ExtractTags title={"Role Filters"} tagSet={roleTags} tags={roleFilteredTags} getterTags={getterRoles}/>
            </div>
@@ -31,8 +31,9 @@ function ExtractTags({title, tagSet, tags, getterTags}) {
 
     const [isVisible, setVisible] = useState(false)
 
-    const {transform} = useSpring({
+    const {transform, opacity} = useSpring({
         transform: isVisible ? `translateY(${-height - 10})` : 'translateY(0px)',
+        opacity: isVisible ? 1 : 0,
         config: {duration: 200}
     })
 
@@ -53,26 +54,31 @@ function ExtractTags({title, tagSet, tags, getterTags}) {
     }, []);
 
     return (
-        <div style={{
-            overflow: 'hidden',
+        <div className={"relative"} style={{
+            /*overflow: 'hidden',*/
         }}>
-            <animated.div onClick={toggleVisibility} className="mb-3 bg-amber-950 z-10 "
+            <animated.div onClick={toggleVisibility} className="mb-3 align-middle wood-container-filter z-70 shadow-xl"
              style={{
-                zIndex: 40,
+                zIndex: 999,
                  display: 'flex'
              }}>
-                <h1>{title} </h1>
-                <DisplaySelection selectedTags={getterTags} tagSet={tags}/>
+                <div className={"wood-container-filter-border"}>
+                    <h1>{title} </h1>
+                </div>
+                <div className={""}>
+                    <DisplaySelection selectedTags={getterTags} tagSet={tags}/>
+                </div>
+
             </animated.div>
 
-            <animated.div ref={divRef} className={"wood-container z-1"} style={{
-                zIndex: 10,
+            <animated.div ref={divRef} className={"wood-dropdown w-full absolute z-60"} style={{
+                opacity,
                 visibility: !isVisible ? 'hidden' : 'visible',
             }}>
                 {filteredActive.map((tag : string) => (
-                    <div className="form-check">
+                    <div className="form-check p-1.5">
 
-                        <animated.button onClick={() => addTagToFilter(tag)}>
+                        <animated.button className={"w-full left-0"} onClick={() => addTagToFilter(tag)}>
                             {tag}
                         </animated.button>
                     </div>
@@ -98,6 +104,7 @@ export function DisplaySelection({selectedTags, tagSet}){
         <div style={{
             display: 'flex',
             gap: '10px',
+            padding: '10px',
             paddingLeft: '10px',
             paddingRight: '10px'
         }}>
