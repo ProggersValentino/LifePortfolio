@@ -1,0 +1,28 @@
+---
+import "../styles/global.css"
+import {Image} from "astro:assets";
+
+interface Props{
+    source:string,
+    alt:string,
+    uri:string,
+    size:any,
+}
+
+const {source, alt, uri, size} = Astro.props
+
+const sizes = {
+    sm: 'h-10 w-10',
+    md: 'h-16 w-16',
+    lg: 'h-24 w-24',
+}
+
+const sizeClass = typeof size === "number" ? `w-[${size}px] h-[${size}px]` : sizes[size] ?? sizes.md;
+
+---
+
+<div>
+    <a href={uri} class={'relative ${sizeClass}'}>
+        <Image class="object-fill object-center" src={source} alt={alt} loading="eager"/>
+    </a>
+</div>

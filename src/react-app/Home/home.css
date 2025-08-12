@@ -11,10 +11,10 @@
 }
 
 .overview{
-    display: flex;
+    display: grid;
     padding: 5%;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
    }
 
 .education{

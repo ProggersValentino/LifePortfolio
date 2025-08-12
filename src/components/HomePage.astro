@@ -2,11 +2,12 @@
 import {HomeTitle} from "../react-app/Components/TitleComponent.tsx";
 import {DefaultTitle} from "../react-app/Components/TitleComponent.tsx";
 import DefaultImage from "./DefaultImage.astro";
-import portfolioImg from "../assets/portfoliophoto.jpg"
+import portfolioImg from "../assets/portfolioIconPicture.jpg"
 import qut from "../assets/QUTLogo.png"
 import {SmallSideParagraph} from "../react-app/Components/ParagraphComponent";
 import {projects} from "../lib/data/projectData.js";
 import {DefaultCard, PictureCard} from "../react-app/Components/CardComponent"
+import RoundProfileImage from "./RoundProfileImage.astro";
 
 
 import "../react-app/Home/home.css"
@@ -19,19 +20,28 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
 <>
    <!-- <HomeTitle title={"Welcome to Peter's Portfolio"} />-->
 
-    <div class="w-100 overview justify-center">
-        <DefaultImage divclassName={"w-100 h-full shadow-sm md:max-w-lg border-[var(--soil-umber)] border-9 rounded rounded-2xl " +
-            "md:shadow-xl/50 shadow-[var(--sun-ray)]"} source={portfolioImg} alt={"Portfolio Photo"} />
-        <div class="h-full">
-            <div class="basis-[70%] md:shadow-xl/30 shadow-[var(--sun-ray)] p-10">
-                <SmallSideParagraph className={"text-[15px] md:text-xl"} para ={"A man who !loves programming the Gold Coast"} />
+    <div class="overview justify-items-center">
+       <!-- <DefaultImage divclassName={"w-100 h-full shadow-sm md:max-w-lg border-[var(&#45;&#45;soil-umber)] border-9 rounded rounded-2xl " +
+            "md:shadow-xl/50 shadow-[var(&#45;&#45;sun-ray)]"} source={portfolioImg} alt={s"Portfolio Photo"} />-->
+
+        <div class="">
+            <RoundProfileImage src={portfolioImg} alt={"Portfolio Photo"} size={100}/>
+        </div>
+
+        <div class="">
+            <DefaultTitle title="Peter Erbeni" client:load/>
+        </div>
+
+            <div class=" md:shadow-xl/30 shadow-[var(--sun-ray)] p-5">
+                <SmallSideParagraph className={"text-[15px] md:text-xl"} para ={"Aspiring Systems Programmer based on the Gold Coast"} />
             </div>
-            <div class="basis-[30%] align-middle w-full h-full">
-                <PictureCard path={"www.qut.com"} imgSrc={qut} alt="dasda" backContent={"yes"}
-                imgWidth={100} imgHeight={100} client:load/>
+            <div class="align-middle h-full">
+                <div>
+
+                </div>
+
             </div>
 
-        </div>
 
     </div>
 
@@ -50,13 +60,13 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
                 </div>
             </div>
 
-            <div class="wood-container md:rounded-2xl h-full" style={{
+         <!--   <div class="wood-container md:rounded-2xl h-full" style={{
                 marginTop: "5%",
                 marginBottom: "5%",
                 }}>
 
-                <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
-                    <DefaultTitle className={"text-[var(--amber-sap)]"} title={"Education/Experience"} client:load/>
+                <div class="bg-[var(&#45;&#45;chestnut-tan)] outline-4 outline-[var(&#45;&#45;soil-umber)] rounded-t-2xl">
+                    <DefaultTitle className={"text-[var(&#45;&#45;amber-sap)]"} title={"Education/Experience"} client:load/>
                 </div>
 
 
@@ -69,7 +79,7 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
                 </div>
             </div>
 
-    </div>
+    </div>-->
 
   <!--  <div class="wood-container md:rounded-2xl h-full" style={{
         marginTop: "5%",
