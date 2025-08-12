@@ -14,7 +14,12 @@ const sizes = {
     lg: "w-24 h-24 text-xl"
 };
 
-const sizeClass = typeof size === "number" ? `w-[${size}px] h-[${size / 1.25}px]` : sizes[size] ?? sizes.md;
+const sizeClass = typeof size === "number"
+    ? ""
+    : sizes[size] ?? sizes.md;
+const customStyle = typeof size === "number"
+    ? `width:${size}px;height:${size}px;`
+    : undefined;
 
 function initialsFromAlt(a) {
     return (a || "")
@@ -26,9 +31,9 @@ function initialsFromAlt(a) {
 }
 const initials = initialsFromAlt(alt);
 ---
-<span class={`inline-block shadow-2xl rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 ${sizeClass} flex items-center justify-center select-none`}>
+<span style={customStyle} class={`inline-block flex items-center justify-center ${sizeClass} shadow-2xl rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 select-none`}>
   {src ? (
-          <Image class="object-center object-cover" src={src} alt={alt} loading="eager"/>
+          <Image class="object-center object-cover w-full h-full" src={src} alt={alt} loading="eager"/>
   ) : (
           <span aria-hidden="true" class="font-semibold text-gray-700 dark:text-gray-100">
       {initials}

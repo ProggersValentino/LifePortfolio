@@ -30,6 +30,11 @@ body {
 
 @layer components {
 
+    .picture-link:hover{
+        background-color: var(--golden-sap);
+        scale: 1.25;
+    }
+
     .subTitle{
         font-size: 1.5rem;
         font-weight: bold;

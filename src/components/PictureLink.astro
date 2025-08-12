@@ -17,12 +17,17 @@ const sizes = {
     lg: 'h-24 w-24',
 }
 
-const sizeClass = typeof size === "number" ? `w-[${size}px] h-[${size}px]` : sizes[size] ?? sizes.md;
+const sizeClass = typeof size === "number"
+    ? ""
+    : sizes[size] ?? sizes.md;
+const customStyle = typeof size === "number"
+    ? `width:${size}px;height:${size}px;`
+    : undefined;
 
 ---
 
 <div>
-    <a href={uri} class={'relative ${sizeClass}'}>
+    <a style={customStyle} href={uri} target="_blank" class={'inline-block flex picture-link transition duration-200 ease-in-out rounded-4xl items-center justify-center ${sizeClass} shadow-2xl overflow-hidden'}>
         <Image class="object-fill object-center" src={source} alt={alt} loading="eager"/>
     </a>
 </div>
