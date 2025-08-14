@@ -1,11 +1,77 @@
 ---
 import '../../styles/global.css'
 import Title from "../Title.astro"
+import DefaultPara from "../DefaultPara.astro"
+import DefaultImage from "../DefaultImage.astro"
+
+import pfpFullShot from "../../assets/portfoliophoto.jpg"
+import linkedIn from "../../assets/LinkedinLogo.png"
+import github from "../../assets/GithubLogo.png"
+import emailIcon from "../../assets/emailIconred.png"
+import PictureLink from "../PictureLink.astro";
 ---
 
 <>
+    <div class=" md:flex gap-5 md:gap-20 justify-items-center p-5 w-full">
 
-    <Title className={"text-center align-middle text-[2rem] font-bold"} title="About Me!" />
+        <div class="max-w-90">
+            <DefaultImage alt="PFP" divclassName={"rounded-[30px]"} source={pfpFullShot} />
+        </div>
+
+        <div class="flex flex-col justify-around items-center p-10 gap-7 h-full">
+
+            <div>
+                <Title className={"text-center align-middle text-[2rem] font-bold"} title="Yello, I'm Peter Erbeni!" />
+            </div>
+
+            <div>
+                <DefaultPara para={"I'm an all round Programmer with great experience in Unreal Engine and Unity and" +
+                    " have further desires to specialize into Systems Programming. Unity C# is my stomping ground " +
+                    "but as of recent I have become proficient in Unreal Engine C++"}/>
+            </div>
+
+            <div>
+                <DefaultPara para={"I'm currently studying a Double Bachelor Degree of Games and Interactive Environments with Business at the " +
+                    "Queensland University of Technology where I have worked on the programming and team management of various projects, as well as " +
+                    "analysis and improvement of a business"}/>
+            </div>
+
+            <div>
+                <DefaultPara para={"I've had almost 2 years of experience at the company Motion Curve contributing to create " +
+                    "VR & MR serious games with the focal point of training for Mining"}/>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+        <div>
+            <Title className={"text-center align-middle text-[2rem] font-bold"} title="Contact & Socials"></Title>
+        </div>
+
+        <div class="flex flex-wrap justify-center h-full w-full py-6 gap-10">
+            <div>
+                <PictureLink source={emailIcon} alt={"github logo"} size={175} uri="mailto:petersv.erbeni@gmail.com"/>
+            </div>
+            <div>
+                <PictureLink source={linkedIn} alt={"LinkedIn Logo"} size={175} uri="https://www.linkedin.com/in/peter-erbeni-615856221/"/>
+            </div>
+            <div>
+                <PictureLink source={github} alt={"github logo"} size={175} uri="https://github.com/ProggersValentino"/>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div>
+        <div>
+            <Title className={"text-center align-middle text-[2rem] font-bold"} title="Education"></Title>
+        </div>
+    </div>
+
+
 
 
 </>
