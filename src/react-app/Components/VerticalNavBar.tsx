@@ -27,8 +27,8 @@ export function HorizontalNavBar() {
             width: "100%",
         }}>
             <nav className="navBarHori">
-                <a href={"./projects/"}>Projects</a>
-                <a href={"./aboutme"}>About Me</a>
+                <a href={"/LifePortfolio/projects/"}>Projects</a>
+                <a href={"/LifePortfolio/aboutme"}>About Me</a>
 
             </nav>
         </div>

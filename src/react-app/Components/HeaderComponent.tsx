@@ -8,7 +8,7 @@ export function HeaderComponent() {
             <header className={"grid grid-cols-3 "} style={{
             }}>
                 <div className={"pr-10"}>
-                    <a href={"./"} className={""}>Peter Erbeni</a>
+                    <a href={"/LifePortfolio/"} className={""}>Peter Erbeni</a>
                 </div>
                 <div className={""}>
                     <HorizontalNavBar />
