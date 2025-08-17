@@ -21,7 +21,7 @@ import PictureLink from "../PictureLink.astro";
         <div class="flex flex-col justify-around items-center p-15 gap-7 h-full">
 
             <div>
-                <Title className={"text-center align-middle text-[2rem] font-bold"} title="Yello, I'm Peter Erbeni!" />
+                <Title headingType="1" className={"text-center align-middle text-[2rem] font-bold"} title="Yello, I'm Peter Erbeni!" />
             </div>
 
             <div>
@@ -47,28 +47,109 @@ import PictureLink from "../PictureLink.astro";
 
     <div>
         <div>
-            <Title className={"text-center align-middle text-[2rem] font-bold"} title="Contact & Socials"></Title>
+            <Title headingType="1" className={"text-center align-middle text-[2rem] font-bold"} title="Contact & Socials"></Title>
         </div>
 
         <div class="flex flex-wrap justify-center h-full w-full py-6 gap-10">
             <div>
-                <PictureLink source={emailIcon} alt={"github logo"} size={175} uri="mailto:petersv.erbeni@gmail.com"/>
+                <PictureLink source={emailIcon} alt={"github logo"} size={115} uri="mailto:petersv.erbeni@gmail.com"/>
             </div>
             <div>
-                <PictureLink source={linkedIn} alt={"LinkedIn Logo"} size={175} uri="https://www.linkedin.com/in/peter-erbeni-615856221/"/>
+                <PictureLink source={linkedIn} alt={"LinkedIn Logo"} size={115} uri="https://www.linkedin.com/in/peter-erbeni-615856221/"/>
             </div>
             <div>
-                <PictureLink source={github} alt={"github logo"} size={175} uri="https://github.com/ProggersValentino"/>
+                <PictureLink source={github} alt={"github logo"} size={115} uri="https://github.com/ProggersValentino"/>
             </div>
 
         </div>
     </div>
 
+    <div class="flex flex-wrap justify-center h-full gap-15">
+        <div>
+            <div>
+                <Title className={"text-left align-middle text-[2rem] font-bold"} title="Education"></Title>
+            </div>
+
+            <div class="flex flex-col h-full w-full py-6 gap-10">
+                <div>
+                    <div>
+                        <Title className={"text-left align-left text-[1.5rem] font-bold"} title="Bachelor of Games & Interactive Environments"></Title>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1.2rem] font-bold" title="Queensland University of Technology"/>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1rem]" title="2022-2026"/>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div>
+                        <Title className={"text-left align-left text-[1.5rem] font-bold"} title="Bachelor of Business"></Title>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1.2rem] font-bold" title="Queensland University of Technology"/>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1rem]" title="2022-2026"/>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <Title className={"text-center align-middle text-[2rem] font-bold"} title="Certifications"></Title>
+            </div>
+
+            <div class="flex flex-wrap justify-center h-full w-full py-6 gap-10">
+                <div>
+                    <div>
+                        <Title className={"text-left align-left text-[1.5rem] font-bold"} title="Diploma of Business"></Title>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1.2rem] font-bold" title="Prestige Service Training"/>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1rem]" title="2021"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <div>
         <div>
-            <Title className={"text-center align-middle text-[2rem] font-bold"} title="Education"></Title>
+            <Title className={"text-center align-middle text-[2rem] font-bold"} title="Work Experience"></Title>
+
+            <div class="flex flex-wrap justify-center h-full w-full py-6">
+                <div>
+                    <div>
+                        <Title className={"text-left align-left text-[1.5rem] font-bold"} title="XR Developer"></Title>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1.2rem] font-bold" title="Motion Curve"/>
+                    </div>
+                    <div>
+                        <Title className="text-left align-left text-[1rem]" title="July 2023 - June 2025"/>
+                    </div>
+
+                    <div>
+                        <DefaultPara para=" - Worked as a xr developer on client-based projects"/>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
 

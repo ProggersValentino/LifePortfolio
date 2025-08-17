@@ -7,6 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+
+  site: "https://ProggersValentino.github.io",
+  base: "/LifePortfolio/",
+
   integrations: [react()],
 
   vite: {

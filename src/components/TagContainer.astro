@@ -1,0 +1,14 @@
+---
+import "../styles/global.css"
+
+interface Props{
+    tagName:string
+    className:string
+}
+
+const {tagName, className} = Astro.props;
+---
+
+<div class={`rounded-4xl border-3 ${className}`}>
+    <p class="font-bold text-center p-3">{tagName}</p>
+</div>

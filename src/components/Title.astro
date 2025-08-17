@@ -4,9 +4,12 @@ import '../styles/global.css'
 interface Props{
     className: string,
     title: string,
+    headingType: number,
 }
 
-const {className, title} = Astro.props;
+const {className, title, headingType = 1} = Astro.props;
+
+
 
 ---
 

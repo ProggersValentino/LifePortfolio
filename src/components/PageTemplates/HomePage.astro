@@ -5,17 +5,18 @@ import DefaultImage from "../DefaultImage.astro";
 import portfolioImg from "../../assets/portfolioIconPicture.jpg"
 import linkedIn from "../../assets/LinkedinLogo.png"
 import github from "../../assets/GithubLogo.png"
-
+import Title from "../Title.astro"
 import qut from "../../assets/QUTLogo.png"
 import {SmallSideParagraph} from "../../react-app/Components/ParagraphComponent";
 import {projects} from "../../lib/data/projectData.js";
 import {DefaultCard, PictureCard} from "../../react-app/Components/CardComponent"
 import RoundProfileImage from "../RoundProfileImage.astro";
 import PictureLink from "../PictureLink.astro";
+import TagContainer from "../TagContainer.astro"
 
 import "../../react-app/Home/home.css"
 import {educationData} from "../../react-app/data/educationData.jsx"
-
+import {skills_tech_tags} from "../../lib/data/skills_techData.js"
 const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes("GoldenChild"))
 
 ---
@@ -32,11 +33,11 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
         </div>
 
         <div class="align-middle w-full">
-            <DefaultTitle className={"text-center"} title="Peter Erbeni" client:load/>
+            <Title className={"text-center font-bold text-[2.5rem]"} title="Peter Erbeni" client:load/>
         </div>
 
             <div class=" md:shadow-xl/30 shadow-[var(--sun-ray)] p-5">
-                <SmallSideParagraph className={"text-[15px] md:text-xl text-center"} para ={"Aspiring Systems Programmer based on the Gold Coast. Experienced with Unity & Unreal Engine"} />
+                <SmallSideParagraph className={"text-[15px] md:text-xl text-center"} para ={"Game Developer based on the Gold Coast & an aspiring Systems Programmer. Experienced with Unity & Unreal Engine"} />
             </div>
             <div class="align-middle h-full flex flex-wrap gap-10">
                 <div>
@@ -72,33 +73,17 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
                 }}>
 
                 <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
-                    <DefaultTitle className={"text-[var(--amber-sap)]"} title={"Skills"} client:load/>
+                    <DefaultTitle className={"text-[var(--amber-sap)]"} title={"Skills & Technology"} client:load/>
                 </div>
 
 
                 <div class="education h-full grid-cols-3 md:grid-cols-5 md:w-full p-5">
-
+                    {skills_tech_tags.map(tag => (
+                        <TagContainer className={""} tagName={tag} />
+                    ))}
                 </div>
             </div>
 
     </div>
 
-  <!--  <div class="wood-container md:rounded-2xl h-full" style={{
-        marginTop: "5%",
-        marginBottom: "5%",
-    }}>
-
-        <div className={"bg-[var(&#45;&#45;chestnut-tan)] outline-4 outline-[var(&#45;&#45;soil-umber)] rounded-t-2xl"}>
-            <DefaultTitle className={"text-[var(&#45;&#45;amber-sap)]"} title={"Socials"} />
-        </div>
-
-
-        <div className={"education h-full grid-cols-3 md:grid-cols-5 md:w-full p-5"}>
-            {educationData.map (education => (
-                    <PictureCard backContent={education.name} imgSrc={education.imgSrc} alt={education.name}
-                                 path={education.uri} imgWidth={125} imgHeight={125} client:load/>
-            ))}
-
-        </div>
--->
 </>
