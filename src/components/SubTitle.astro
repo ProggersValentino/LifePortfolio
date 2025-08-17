@@ -4,12 +4,13 @@ import "../styles/global.css"
 
 interface Props{
     subTitleName:string,
+    className:string,
 }
 
-const {subTitleName} = Astro.props
+const {subTitleName, className} = Astro.props
 
 ---
 
 <div>
-    <h2 class={"font-bold subTitle"}>{subTitleName}</h2>
+    <h2 class={`font-bold subTitle ${className}`}>{subTitleName}</h2>
 </div>

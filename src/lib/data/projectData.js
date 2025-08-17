@@ -7,9 +7,12 @@ import CCgif from '../../assets/gifs/ComboSystem_ComboContainer.gif'
 export const projects = [
     {
     id: 1,
+    team:["Peter Erbeni", "Sebastion P", "Hailey Graham", "Jack May", "Tom F", "Lauchie S", "Parker", "Yuxuan Z"],
     tags:{
         roleTag: ["Programmer", "Producer"],
-        projectTag: ["GoldenChild", "University"]
+        projectTag: ["GoldenChild", "University"],
+        techTags: ["Unreal Engine", "PC", "Steam"],
+        skillTags: ["C++", "Blueprint", "Unreal", "PC", "Steam", "Git", "Gameplay", "Gameplay Tools"],
     },
     path: "/project/roman-rumble",
     title: "Roman Rumble",
@@ -17,15 +20,19 @@ export const projects = [
     sections:
         [{
             pid: 1,
-            title: "",
-            introP: "",
+            title: "About Roman Rumble",
+            introP: "Roman Rumble is a round by round close combat game fusing Roman Gladiator Grandure with WWE charm. " +
+                "The player plays a Gladiator who must appeal to the crowd through trial of combat where they must battle their" +
+                "foes in all out gladiator WWE brawl. " +
+                "During each round of combat, the crowd will throw the player items or powerups granted the player has appealed to them enough. " +
+                "Once the player wins through surviving 5 rounds of combat where each round gets harder and harder with more enemies" +
+                "My responsibilities fell on creating the player and its mechanics while picking up C++ for the " +
+                "first time.",
             uri: {
                 linkType: "img",
                 link: ""
             },
-            p: "Roman Rumble is a round by round close combat game fusing Gladiator Grandure with WWE charm." +
-                "My responsibilities fell on creating the player and its mechanics while picking up C++ for the " +
-                "first time."
+            p: ""
         },
             {
                 pid: 2,
