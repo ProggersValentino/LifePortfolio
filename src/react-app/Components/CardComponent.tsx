@@ -1,4 +1,4 @@
-import {DefaultImg} from "./ImageComponent";
+import {DefaultImg} from "../../components/react/ImageComponent.tsx";
 import {CardTitle, CardTitleCustomClass} from "./TitleComponent";
 import { useSpring, animated, to } from '@react-spring/web'
 import {useState} from "react";

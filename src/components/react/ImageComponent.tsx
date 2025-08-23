@@ -1,4 +1,4 @@
-import "./ComponentsCSS/imagecomp.css"
+import "../../react-app/Components/ComponentsCSS/imagecomp.css"
 import {useState} from "react"
 
 export function DefaultImg({source, alt, divclassName = ""}) {

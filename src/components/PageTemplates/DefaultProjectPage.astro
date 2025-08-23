@@ -7,8 +7,10 @@ import DefaultImage from "../DefaultImage.astro";
 import DefaultPara from "../DefaultPara.astro";
 import ProjectTitle from "../ProjectTitle.astro";
 import "../../styles/global.css"
-import {DefaultImg} from "../../react-app/Components/ImageComponent";
+import {DefaultImg} from "../react/ImageComponent";
 import { YouTube } from "astro-lazy-youtube-embed";
+import ContentCarasel from "../../components/ContentCarasel.astro"
+import CardComponent from "../CardComponent.astro";
 
 interface Props{
     projectToShow:string,
@@ -18,6 +20,26 @@ interface Props{
 const {projectToShow, titleClass} = Astro.props;
 
 const filteredProject = projects.find((project)=> projectToShow === project.title);
+
+
+/*{section.uri.linkType == "img" ?
+            (section.uri.link == "" ? <></> :
+
+                        <div class={"py-1 w-full flex justify-center"}}>
+                            <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
+                                        source={section.uri.link} alt={section.title}/>
+                        </div>
+            )
+            :
+            (section.uri.link == "" ? <></> :
+
+                        <div class="py-4 flex justify-center">
+                            <YouTube class={"rounded-2xl max-w-[900px]"} title={section.title} videoId={section.uri.link}/>
+                        </div>
+
+
+            )
+        }*/
 
 ---
 
@@ -48,7 +70,7 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
 <div class="flex flex-wrap justify-center items-start gap-10 md:gap-25">
     <div class="flex flex-col flex-1 justify-center gap-5 py-5">
         <div class="">
-            <SubTitle className={"align-center text-center"} subTitleName={"Demonstrated Roles"}/>
+            <SubTitle divClassName="" className={"align-center text-center"} subTitleName={"Demonstrated Roles"}/>
         </div>
         <div class="flex flex-wrap flex-1 justify-center gap-2">
             {filteredProject.tags.roleTag.map(tag =>
@@ -73,11 +95,41 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
     </div>
 </div>
 
+    <div class="flex flex-wrap justify-center items-start gap-10 md:gap-15">
+        <div class="flex flex-col space-y-4 w-full md:w-1/2">
+            <div class="text-left">
+                <SubTitle divClassName="text-center" class="text-left" subTitleName="Direct Contributions" />
+            </div>
+
+            <div class="flex flex-col gap-2">
+                {filteredProject.contributions.map((contribution, index) => (
+                        <div key={index} class="text-left">
+                            {contribution}
+                        </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center w-full md:w-1/2">
+            <div>
+                <SubTitle class="" divClassName="text-center" subTitleName="Outcomes" />
+            </div>
+            <div class="flex flex-col gap-6">
+                {filteredProject.outcomes.map((outcome, index) => (
+                        <div key={index}>
+                            <DefaultPara para={outcome} />
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+
+
 
     {filteredProject.sections.map((section) =>
-    <div class="py-4 w-full">
+    <div class="py-7 w-full">
         <div class="py-1">
-            {section.title == "" ? <></> : <SubTitle subTitleName={section.title}/>}
+            {section.title == "" ? <></> : <SubTitle className="text-center" subTitleName={section.title}/>}
         </div>
 
         {section.introP == "" ? <></> :
@@ -85,24 +137,30 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
             <DefaultPara para={section.introP}/>
         </div>}
 
-        {section.uri.linkType == "img" ?
-            (section.uri.link == "" ? <></> :
+        {Array.isArray(section.uri) && section.uri.length <= 1 ?
+            (section.uri[0].linkType == "img" ?
+                (section.uri[0].link == "" ? <></> :
 
-                        <div class={"py-1 w-full flex justify-center"}}>
-                            <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
-                                        source={section.uri.link} alt={section.title}/>
-                        </div>
-            )
+                                <div class={"py-1 w-full flex justify-center"}}>
+                                    <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
+                                                source={section.uri[0].link} alt={section.title}/>
+                                </div>
+                )
+                :
+                (section.uri[0].link == "" ? <></> :
+
+                                <div class="py-4 flex justify-center">
+                                    <YouTube class={"rounded-2xl max-w-[900px]"} title={section.title} videoId={section.uri[0].link}/>
+                                </div>
+
+
+                ))
             :
-            (section.uri.link == "" ? <></> :
+            <ContentCarasel content={section.uri} client:load/>
 
-                        <div class="flex justify-center">
-                            <YouTube class={"rounded-2xl max-w-[900px]"} title={section.title} videoId={section.uri.link}/>
-                        </div>
-
-
-            )
         }
+
+
 
 
 

@@ -1,3 +1,175 @@
 ---
-$END$
+import "../styles/global.css"
+import DefaultImage from "./DefaultImage.astro"
+import {YouTube} from "astro-lazy-youtube-embed";
+import arrowLeft from "../assets/to-left-b.png"
+import arrowRight from "../assets/to-right.png"
+import photoIcon from "../assets/imageicon.png"
+import ytIcon from "../assets/youtubeicon.png"
+
+interface Props {
+    content:any[],
+    className:string
+}
+
+const {content, className} = Astro.props;
+
+let index = 0;
+const lastIndex = content.length - 1;
+
+
+
+
 ---
+<div class="flex flex-col">
+
+    <!--carousel main content-->
+    <div class="flex justify-center items-center gap-3 w-full h-full">
+        <!-- Prev Button -->
+        <div class="flex  h-full">
+            <button id="prev" class="bg-amber-500 rounded-4xl max-w-[75px] px-2 py-1 cursor-pointer">
+                <DefaultImage alt="arrow" divclassName="" source={arrowLeft} />
+            </button>
+        </div>
+
+        <!-- Carousel Track -->
+        <div class="overflow-hidden relative w-full">
+            <div id="track" class="flex transition-transform duration-500">
+                {content.map((item, index) =>
+                    item?.linkType === "img" ? (
+                            <div id={`${index == 0 ? 'current-slide' : ''}`} class="flex-shrink-0 w-full flex justify-center py-4">
+                                <DefaultImage source={item.link} alt ={item.linkType} />
+                            </div>
+                    ) : (
+                            <div id={`${index == 0 ? 'current-slide' : ''}`} class="flex-shrink-0 w-full flex justify-center py-4">
+                                <YouTube class="rounded-2xl max-w-[1200px]" title="Some title" videoId={item.link} />
+                            </div>
+                    )
+                )}
+            </div>
+        </div>
+        <!-- Next Button -->
+        <div>
+            <button id="next" class="bg-amber-500 px-2 py-1 rounded-4xl max-w-[75px] cursor-pointer">
+                <DefaultImage alt="arrow" divclassName="" source={arrowRight} />
+            </button>
+        </div>
+    </div>
+
+    <div id="dots" class="flex flex-wrap justify-center gap-10 py-1">
+        {
+            content.map((item, index) =>
+
+                        <button class={`max-w-[30px] transition duration-500 ${index == 0 ? 'current-slide' : 'not-current'} cursor-pointer `} id={`${index == 0 ? 'current-slide' : ''}`}>
+                            <DefaultImage alt="" divclassName="" source={item.linkType == "img" ? photoIcon : ytIcon} />
+                        </button>
+                    )
+        }
+    </div>
+
+</div>
+
+<script>
+    /*what we're doing is thta we're preloading everything, overflowing hidden it and then transition each slide by moving it on the x by its width*/
+    const track = document.querySelector('#track');
+    const slides = Array.from(track.children);
+    let index = 0;
+
+    const nextBtn = document.querySelector('#next');
+    const prevBtn = document.querySelector('#prev');
+
+    const dotsNav = document.querySelector('#dots');
+    const dots = Array.from(dotsNav.children);
+
+
+    const slideSize = slides[0].getBoundingClientRect().width;
+
+    const updateSize = () => {
+        const currentSlide = track.querySelector('#current-slide');
+        const offset = currentSlide.offsetLeft;
+
+        track.style.transform = `translateX(-${offset}px)`;
+
+    }
+
+    window.addEventListener('resize', updateSize);
+
+    const moveSlide = (track, currentSlide, targetSlide) => {
+        const offset = targetSlide.offsetLeft; //distance from track's left edge
+
+        track.style.transform = `translateX(-${offset}px)`;
+        currentSlide.id = "";
+        targetSlide.id = "current-slide";
+    }
+
+    const updateDots = (currentDot, targetDot) => {
+        currentDot.classList.remove('current-slide');
+        currentDot.classList.add('not-current');
+        targetDot.classList.add('current-slide');
+        targetDot.classList.remove('not-current');
+
+
+        currentDot.id = "";
+        targetDot.id = "current-slide";
+    }
+
+    nextBtn.addEventListener('click', e => {
+        const currentSlide = track.querySelector('#current-slide');
+        const nextSlide = currentSlide.nextElementSibling ? currentSlide.nextElementSibling : slides[0];
+
+        const currentDot = dotsNav.querySelector('#current-slide');
+        const targetDot = currentDot.nextElementSibling ? currentDot.nextElementSibling : dots[0];
+        moveSlide(track, currentSlide, nextSlide);
+
+        updateDots(currentDot, targetDot);
+
+    })
+
+
+    prevBtn.addEventListener('click', e => {
+        const currentSlide = track.querySelector('#current-slide');
+        const prevSlide = currentSlide.previousElementSibling ? currentSlide.previousElementSibling : slides[slides.length - 1];
+
+        const currentDot = dotsNav.querySelector('#current-slide');
+        const targetDot = currentDot.previousElementSibling ? currentDot.previousElementSibling : dots[dots.length - 1];
+
+        moveSlide(track, currentSlide, prevSlide);
+        updateDots(currentDot, targetDot);
+
+    })
+
+    dotsNav.addEventListener('click', e => {
+        const targetDot = e.target.closest('button'); //to ensure we are only picking up clicks that happen on the dots
+
+        if(!targetDot) return;
+
+        const currentSlide = track.querySelector('#current-slide');
+        const currentDot = dotsNav.querySelector('#current-slide');
+
+        const targetIndex = dots.findIndex(dot => dot === targetDot); //getting the target dot we clicked on and matching it to the array
+        const targetSlide = slides[targetIndex];
+
+        moveSlide(track, currentSlide, targetSlide);
+        updateDots(currentDot, targetDot);
+    })
+
+
+
+
+    /*const update = () => {
+        const width = slides[0].offsetWidth;
+        track.style.transform = `translateX(-${index * width}px)`;
+    };
+
+    document.getElementById('prev').addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        update();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        update();
+    });
+
+    // responsive*/
+</script>

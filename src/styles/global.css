@@ -35,10 +35,22 @@ body {
         scale: 1.1;
     }
 
+    .not-current{
+        filter: grayscale(100%);
+    }
+
+    .current-slide{
+        filter: grayscale(0%);
+        scale: 1.25;
+    }
+
+    .is-hidden{
+        display: none;
+    }
+
     .subTitle{
         font-size: 1.5rem;
         font-weight: bold;
-        text-align: center;
     }
 
     .wood-container{

@@ -1,6 +1,6 @@
 import {HomeTitle} from "../Components/TitleComponent.tsx";
 import {DefaultTitle} from "../Components/TitleComponent.tsx";
-import {DefaultImg} from "../Components/ImageComponent";
+import {DefaultImg} from "../../components/react/ImageComponent.tsx";
 import portfolioImg from "../../assets/portfoliophoto.jpg"
 import {SmallSideParagraph} from "../Components/ParagraphComponent";
 import {projects} from "../../lib/data/projectData";
