@@ -9,7 +9,7 @@ import CCgif from '../../assets/gifs/ComboSystem_ComboContainer.gif'
 export const projects = [
     {
     id: 1,
-    team:["Peter Erbeni", "Sebastion P", "Hailey Graham", "Jack May", "Tom F", "Lauchie S", "Parker", "Yuxuan Z"],
+    team:["Peter Erbeni", "Sebastion Poutanen", "Hailey Graham", "Jack May", "Tom Fasham", "Lauchie Sharman", "Parker Laansma", "Yuxuan Zhou"],
     tags:{
         roleTag: ["Programmer", "Producer"],
         projectTag: ["GoldenChild", "University"],
