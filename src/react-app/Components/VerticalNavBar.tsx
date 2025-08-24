@@ -22,11 +22,8 @@ export function NavBar() {
 
 export function HorizontalNavBar() {
     return (
-        <div style={{
-            display: "flex",
-            width: "100%",
-        }}>
-            <nav className="navBarHori">
+        <div className={"flex justify-center"}>
+            <nav className=" gap-10 flex justify-center">
                 <a href={"/projects/"}>Projects</a>
                 <a href={"/aboutme"}>About Me</a>
 

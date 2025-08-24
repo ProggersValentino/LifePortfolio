@@ -40,8 +40,6 @@ export function DefaultCard({ title, imgSrc, alt, path }) {
             height: imgHeight,*/
         }}>
 
-            {/*button to flip */}
-            <OneActionButton className={"absolute top-[5%] right-5 z-50 w-5 h-5 grow"} actionEvent={handleFlip} />
 
             {/*front of card*/}
             <animated.div
@@ -111,8 +109,6 @@ export function PictureCard({ backContent, imgSrc, alt, path, imgWidth, imgHeigh
                  width: imgWidth,
                  height: imgHeight,
              }}>
-
-            <OneActionButton className={"absolute top-[5%] right-5 z-50 w-5 h-5 grow"} actionEvent={handleFlip} />
 
 
             {/*front of card*/}

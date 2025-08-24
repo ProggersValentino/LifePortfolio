@@ -25,4 +25,60 @@
 
     /* 🎓 QUT */
     --qut-blue: #004B87;
+
+
+    --color-primary: #313E49;
+    --color-primary-100: #6F8599;
+    --color-primary-200: #5A6E80;
+    --color-primary-300: #465867;
+    --color-primary-400: #3B4B57;
+    --color-primary-700: #29343D;
+    --color-primary-800: #222B33;
+    --color-primary-900: #1B232A;
+
+    --color-secondary: #4A6572;
+    --color-accent-a: #FFB84D;
+    --color-accent-b: #E85D75;
+    --color-accent-c: #7BD389;
+
+    --bg: #F7F9FB;
+    --surface: #EEF3F6;
+    --border: #D5DEE6;
+    --text: #0F1418;
+    --text-muted: #44515B;
+
+    --success: #2EAD76;
+    --warning: #FFB020;
+    --danger: #E5484D;
+    --info: #2F81F7;
+
+    /* Base */
+    --color-background: #313E49;
+    --color-surface: #3E4B57;
+    --color-surface-elevated: #46535F;
+
+    /* Text */
+    --color-text-primary: #E6E9ED;
+    --color-text-secondary: #B0BAC4;
+    --color-text-disabled: #7D8790;
+    --color-text-inverse: #1C242C;
+
+    /* Core Accents */
+    --color-accent-primary: #4FC3F7;   /* cyan blue */
+    --color-accent-secondary: #FFB347; /* amber */
+    --color-success: #66BB6A;          /* green */
+    --color-warning: #FFB74D;          /* yellow-orange */
+    --color-error: #E57373;            /* soft red */
+    --color-info: #81D4FA;             /* light blue */
+
+    /* Skill Tags (new) */
+    --color-tag-1: #5DADE2;  /* cool blue, softer than primary */
+    --color-tag-1-darker: #409FDD;
+    --color-tag-2: #48C9B0;  /* teal, modern fresh look */
+    --color-tag-2-darker: #38BCA2;
+    --color-tag-3: #F5B041;  /* golden-orange, distinct from amber */
+    --color-tag-3-darker: #F4A62A;
+    --color-tag-4: #BA68C8;  /* violet-purple, creative contrast */
+    --color-tag-4-lighter: #AD4BBE;
+
 }

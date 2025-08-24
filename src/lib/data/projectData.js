@@ -26,6 +26,10 @@ export const projects = [
     path: "/project/roman-rumble",
     title: "Roman Rumble",
     thumbnailPic: gngImg,
+        displayURIs: [{
+            linkType: "img",
+            link: gngImg
+        },],
     sections:
         [{
             pid: 1,
@@ -49,23 +53,11 @@ export const projects = [
                 introP: "",
                 uri: [{
                     linkType: "img",
-                    link: gngImg
+                    link: ""
                 }],
                 p: ""
             },
-            {
-                pid: 3,
-                title: "Combo System",
-                introP: "One the main problems needed to be solved was creating a combo system to have some clear variety " +
-                    "in combat while being accessible and easily modifiable for designers",
-                uri: [{
-                    linkType: "img",
-                    link: CCgif
-                }],
-                p: "To make this this happen I created a custom UObject which was setup with all the necessary settings " +
-                    " the designers would need to modify each combo type like main ability to activate, impact freeze upon hitting enemies " +
-                    "etc. Then within the player is the main combo chain for the designers to modify to their desire"
-            }]
+            ]
 },
 
 
@@ -91,6 +83,10 @@ export const projects = [
         path: "/project/tortal-welfare",
         title: "Tortal Welfare",
         thumbnailPic: tortalWelfareCover,
+        displayURIs: [{
+            linkType: "yt",
+            link: "_RV8bCqdR3s"
+        },],
         sections:
             [{
                 pid: 1,
@@ -99,8 +95,8 @@ export const projects = [
                     "Players have the option to take control of both a conservation ranger and a sea turtle, " +
                     "switching between them, as the minigames completed in one perspective positively affect the other, making the difficulty of these minigames easier for the other perspective. ",
                 uri: [{
-                    linkType: "yt",
-                    link: "_RV8bCqdR3s"
+                    linkType: "img",
+                    link: ""
                 }],
                 p: "The primary goal of the game is to diminish the difficulty bar to 0 ending the game but allowing the player to continue playing if they so desire. " +
                     "This was to fulfill the client brief in communicating the importance of turtles and their conservation to school aged students in the grades 4 to 6"
@@ -133,6 +129,14 @@ export const projects = [
         path: "/project/tantrum",
         title: "tANTrum",
         thumbnailPic: tantrum,
+        displayURIs: [{
+            linkType: "yt",
+            link: "_pve7hGCJBk"
+        },
+            {
+                linkType: "img",
+                link: tantrum
+            },],
         sections:
             [{
                 pid: 1,
@@ -141,13 +145,9 @@ export const projects = [
                     "You defend Basko by placing down towers but also get involved in the action through continual maintenance of towers when they break down and a personal weapon to help the defence. " +
                     "This game was developed in Unity and deployed on the headset alone so that there was no requirement for cables.",
                 uri: [{
-                    linkType: "yt",
-                    link: "_pve7hGCJBk"
-                },
-                    {
-                        linkType: "img",
-                        link: tantrum
-                    },
+                    linkType: "img",
+                    link: ""
+                }
                     ],
                 p: ""
             },
@@ -340,6 +340,10 @@ export const projects = [
         path: "/project/NDMR",
         title: "Nitro Development Charging Mixed Reality",
         thumbnailPic: NDMRCover,
+        displayURIs: [{
+            linkType: "yt",
+            link: "xiHoU_ehcok"
+        }],
         sections:
             [{
                 pid: 1,

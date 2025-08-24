@@ -57,12 +57,12 @@ function ExtractTags({title, tagSet, tags, getterTags}) {
         <div className={"relative"} style={{
             /*overflow: 'hidden',*/
         }}>
-            <animated.div onClick={toggleVisibility} className="mb-3 align-middle wood-container-filter z-70 shadow-xl"
+            <animated.div onClick={toggleVisibility} className="mb-3 align-middle bg-[var(--color-surface)] border-3 border-[var(--color-surface-elevated)] rounded-xl z-70 shadow-xl"
              style={{
                 zIndex: 999,
                  display: 'flex'
              }}>
-                <div className={"wood-container-filter-border"}>
+                <div className={" rounded-xl border-1 border-[var(--color-surface-elevated)] bg-[var(--color-surface)] p-3"}>
                     <h1>{title} </h1>
                 </div>
                 <div className={""}>

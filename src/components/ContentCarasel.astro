@@ -24,11 +24,11 @@ const lastIndex = content.length - 1;
 <div class="flex flex-col">
 
     <!--carousel main content-->
-    <div class="flex justify-center items-center gap-3 w-full h-full">
+    <div class="flex item-stretch justify-center items-center w-full">
         <!-- Prev Button -->
-        <div class="flex  h-full">
-            <button id="prev" class="bg-amber-500 rounded-4xl max-w-[75px] px-2 py-1 cursor-pointer">
-                <DefaultImage alt="arrow" divclassName="" source={arrowLeft} />
+        <div class="static h-full ">
+            <button id="prev" class=" py-1 cursor-pointer w-full h-full bg-[var(--color-accent-secondary)]-500">
+                <DefaultImage alt="arrow" divclassName="max-w-[75px]" source={arrowLeft} />
             </button>
         </div>
 
@@ -42,7 +42,7 @@ const lastIndex = content.length - 1;
                             </div>
                     ) : (
                             <div id={`${index == 0 ? 'current-slide' : ''}`} class="flex-shrink-0 w-full flex justify-center py-4">
-                                <YouTube class="rounded-2xl max-w-[1200px]" title="Some title" videoId={item.link} />
+                                <YouTube class="rounded-2xl" title="" videoId={item.link} />
                             </div>
                     )
                 )}
@@ -50,7 +50,7 @@ const lastIndex = content.length - 1;
         </div>
         <!-- Next Button -->
         <div>
-            <button id="next" class="bg-amber-500 px-2 py-1 rounded-4xl max-w-[75px] cursor-pointer">
+            <button id="next" class="bg-[var(--color-accent-secondary)]-500 px-2 py-1 shrink rounded-4xl max-w-[75px] cursor-pointer">
                 <DefaultImage alt="arrow" divclassName="" source={arrowRight} />
             </button>
         </div>

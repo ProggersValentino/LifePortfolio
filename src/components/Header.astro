@@ -1,0 +1,36 @@
+---
+import {HorizontalNavBar} from "../react-app/Components/VerticalNavBar";
+import DefaultImage from "./DefaultImage.astro";
+import image from "../assets/downloadIcon.png"
+import Title from "./Title.astro";
+import resume from "../assets/documents/Peter_Erbeni_Resume_XR.pdf"
+---
+
+
+<div className={"flex flex-col w-full sticky top-0 bg-[var(--color-background)] z-999"}>
+    <header className={"w-full px-4 md:px-8 py-5 grid grid-cols-3 gap-10"} style={{
+    }}>
+        <div class={"justify-self-start"}>
+            <a href={"/"} className={""}>
+                <Title className="font-bold" headingType="" title="Peter Erbeni" />
+            </a>
+        </div>
+        <div class={"justify-self-center"}>
+            <HorizontalNavBar client:load/>
+        </div>
+
+        <div class="justify-self-end">
+           <a href={resume} download="Peter_Erbeni_Resume_XR.pdf" className={""}>
+               <button class="flex flex-nowrap gap-2 py-0.5 px-2 cursor-pointer justify-center rounded-lg border-2 bg-[var(--color-info)]">
+                   <DefaultImage alt="download" divclassName="max-w-[20px]" source={image}/>
+                   <Title className="font-bold" title="Resume" />
+               </button>
+           </a>
+
+        </div>
+
+    </header>
+    <div class ="w-full bg-[var(--color-surface)]">
+
+    </div>
+</div>

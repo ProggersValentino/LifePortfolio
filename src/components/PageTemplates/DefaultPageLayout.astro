@@ -1,5 +1,5 @@
 ---
-import {HeaderComponent} from "../../react-app/Components/HeaderComponent";
+import Header from "../Header.astro";
 import {FooterComponent} from "../../react-app/Components/FooterComponent";
 import {HomePage} from "../../react-app/Home/homePort";
 ---
@@ -11,9 +11,9 @@ import {HomePage} from "../../react-app/Home/homePort";
     <meta name="generator" content={Astro.generator} />
     <title>Peter Erbeni</title>
 </head>
-<body class="mr-[2%] ml-[2%] md:mr-[15%] md:ml-[15%]">
-<HeaderComponent client:load/>
-<main>
+<body >
+<Header client:load/>
+<main class="mr-[3%] ml-[3%] md:mr-[12%] md:ml-[12%]">
     <slot /> <!--slots in other comps-->
 </main>
 

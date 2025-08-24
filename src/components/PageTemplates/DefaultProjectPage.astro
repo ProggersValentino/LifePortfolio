@@ -21,26 +21,6 @@ const {projectToShow, titleClass} = Astro.props;
 
 const filteredProject = projects.find((project)=> projectToShow === project.title);
 
-
-/*{section.uri.linkType == "img" ?
-            (section.uri.link == "" ? <></> :
-
-                        <div class={"py-1 w-full flex justify-center"}}>
-                            <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
-                                        source={section.uri.link} alt={section.title}/>
-                        </div>
-            )
-            :
-            (section.uri.link == "" ? <></> :
-
-                        <div class="py-4 flex justify-center">
-                            <YouTube class={"rounded-2xl max-w-[900px]"} title={section.title} videoId={section.uri.link}/>
-                        </div>
-
-
-            )
-        }*/
-
 ---
 
 <>
@@ -67,35 +47,67 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
 
             }
     </div>
-<div class="flex flex-wrap justify-center items-start gap-10 md:gap-25">
-    <div class="flex flex-col flex-1 justify-center gap-5 py-5">
-        <div class="">
-            <SubTitle divClassName="" className={"align-center text-center"} subTitleName={"Demonstrated Roles"}/>
+    <div class="flex flex-col md:flex-row gap-2 py-5">
+
+        {/* RIGHT SIDE */}
+        {Array.isArray(filteredProject.displayURIs) && filteredProject.displayURIs.length > 0 && (
+                <div class="flex-1 flex justify-center items-center">
+                    {filteredProject.displayURIs.length === 1 ? (
+                        filteredProject.displayURIs[0].linkType === "img" ? (
+                            filteredProject.displayURIs[0].link === "" ? null : (
+                                    <DefaultImg
+                                            divclassName="h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"
+                                            source={filteredProject.displayURIs[0].link}
+                                            alt={filteredProject.title}
+                                    />
+                            )
+                        ) : (
+                            filteredProject.displayURIs[0].link === "" ? null : (
+                                    <YouTube
+                                            class="rounded-2xl max-w-[900px]"
+                                            title={filteredProject.title}
+                                            videoId={filteredProject.displayURIs[0].link}
+                                    />
+                            )
+                        )
+                    ) : (
+                            <ContentCarasel content={filteredProject.displayURIs} client:load />
+                    )}
+                </div>
+        )}
+
+
+        {/* LEFT SIDE */}
+        <div class=`flex ${filteredProject.displayURIs.length < 1 ? 'flex-wrap justify-center items-center' : 'flex-col shrink flex-initial justify-between md:w-1/4' } `>
+            {/* Demonstrated Roles */}
+            <div class="flex flex-col flex-1 justify-center gap-5">
+                <SubTitle className="text-center" subTitleName="Demonstrated Roles" />
+                <div class="flex flex-wrap justify-center gap-2">
+                    {filteredProject.tags.roleTag.map(tag =>
+                            <div class="inline-block px-3 bg-[var(--color-surface)] border-[var(--color-surface-elevated)] rounded-xl border-4" key={tag}>
+                                {tag}
+                            </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Skills Demonstrated */}
+            <div class="flex flex-col flex-1 justify-center gap-5">
+                <SubTitle className="text-center" subTitleName="Skills Demonstrated" />
+                <div class="flex flex-wrap justify-center gap-2">
+                    {filteredProject.tags.skillTags.map(tag =>
+                            <div class="inline-block px-3 bg-[var(--color-surface)] border-[var(--color-surface-elevated)] rounded-xl border-4" key={tag}>
+                                {tag}
+                            </div>
+                    )}
+                </div>
+            </div>
         </div>
-        <div class="flex flex-wrap flex-1 justify-center gap-2">
-            {filteredProject.tags.roleTag.map(tag =>
-                    <div class={"inline-block px-3 bg-[var(--tree-bark)] border-[var(--soil-umber)] rounded-xl border-4"} key={tag}>
-                        {tag}
-                    </div>)}
-        </div>
+
 
     </div>
 
-    <div class="flex flex-col align-center text-center gap-5 py-5 md:w-1/2">
-        <div>
-            <SubTitle className={"align-center text-center"} subTitleName={"Skills Demonstrated"}/>
-        </div>
-        <div class="flex flex-wrap justify-center gap-2">
-            {filteredProject.tags.skillTags.map(tag =>
-                    <div class={"inline-block px-3 bg-[var(--tree-bark)] border-[var(--soil-umber)] rounded-xl border-4"} key={tag}>
-                        {tag}
-                    </div>)}
-        </div>
-
-    </div>
-</div>
-
-    <div class="flex flex-wrap justify-center items-start gap-10 md:gap-15">
+    <div class="flex flex-wrap md:flex-nowrap justify-center items-start gap-10 md:gap-15">
         <div class="flex flex-col space-y-4 w-full md:w-1/2">
             <div class="text-left">
                 <SubTitle divClassName="text-center" class="text-left" subTitleName="Direct Contributions" />
@@ -142,7 +154,7 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
                 (section.uri[0].link == "" ? <></> :
 
                                 <div class={"py-1 w-full flex justify-center"}}>
-                                    <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
+                                    <DefaultImg divclassName={"h-full max-w-[900px] shadow-sm object-center border-[9px] rounded rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"}
                                                 source={section.uri[0].link} alt={section.title}/>
                                 </div>
                 )

@@ -13,10 +13,14 @@ import {DefaultCard, PictureCard} from "../../react-app/Components/CardComponent
 import RoundProfileImage from "../RoundProfileImage.astro";
 import PictureLink from "../PictureLink.astro";
 import TagContainer from "../TagContainer.astro"
+import emailIcon from "../../assets/EmailIcon.png"
 
 import "../../react-app/Home/home.css"
 import {educationData} from "../../react-app/data/educationData.jsx"
-import {skills_tech_tags} from "../../lib/data/skills_techData.js"
+import {languageTags} from "../../lib/data/skills_techData.js"
+import {engineTags} from "../../lib/data/skills_techData.js"
+import {platformTags} from "../../lib/data/skills_techData.js"
+import {competenciesTags} from "../../lib/data/skills_techData.js"
 const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes("GoldenChild"))
 
 ---
@@ -36,7 +40,7 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
             <Title className={"text-center font-bold text-[2.5rem]"} title="Peter Erbeni" client:load/>
         </div>
 
-            <div class=" md:shadow-xl/30 shadow-[var(--sun-ray)] p-5">
+            <div class="bg-[var(--color-surface)] rounded-xl md:shadow-xl/30 shadow-[var(--sun-ray)] p-5">
                 <SmallSideParagraph className={"text-[15px] md:text-xl text-center"} para ={"Game Developer based on the Gold Coast & an aspiring Systems Programmer. Experienced with Unity & Unreal Engine"} />
             </div>
             <div class="align-middle h-full flex flex-wrap gap-10">
@@ -46,44 +50,63 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
                 <div>
                     <PictureLink source={github} alt={"github logo"} size={50} uri="https://github.com/ProggersValentino"/>
                 </div>
+                <div>
+                    <PictureLink source={emailIcon} alt={"github logo"} size={50} uri="mailto:petersv.erbeni@gmail.com"/>
+                </div>
 
             </div>
 
 
     </div>
 
-    <div class="wood-container md:rounded-2xl h-full">
-                <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
-                    <DefaultTitle className={"text-[var(--amber-sap)] text-shadow-[var(--charcoal)]"} title={"Featured Projects"} client:load/>
+    <div>
+
+    </div>
+    <div class="bg-[var(--color-surface)] md:rounded-2xl h-full">
+                <div class=" rounded-t-2xl">
+                    <DefaultTitle className={"text-[var(--color-accent-secondary)] text-shadow-[var(--charcoal)]"} title={"Featured Projects"} client:load/>
                 </div>
 
+                <div class="absolute z-999 bg-blue-500 w-full"></div>
 
-                <div class="goldenChildren h-full grid-cols-1 md:grid-cols-3 md:w-full p-5">
+                <div class="goldenChildren  h-full grid-cols-1 md:grid-cols-3 md:w-full p-5">
                     <!--grabs and displays all projects that are tagged goldenchild-->
                     {goldenChildren.map (golden => (
                         <DefaultCard title={golden.title} imgSrc={golden.thumbnailPic} alt={golden.title}
                                      path={golden.path} client:load/>
                     ))}
                 </div>
-            </div>
+    </div>
 
-            <div class="wood-container md:rounded-2xl h-full" style={{
+    <div class=" bg-[var(--color-surface)] md:rounded-2xl h-full shadow-xl/30" style={{
                 marginTop: "5%",
                 marginBottom: "5%",
                 }}>
 
-                <div class="bg-[var(--chestnut-tan)] outline-4 outline-[var(--soil-umber)] rounded-t-2xl">
-                    <DefaultTitle className={"text-[var(--amber-sap)]"} title={"Skills & Technology"} client:load/>
+                <div class=" rounded-t-2xl">
+                    <DefaultTitle className={"text-[var(--color-accent-secondary)] text-shadow"} title={"Skills & Technology"} client:load/>
                 </div>
 
 
                 <div class="education h-full grid-cols-3 md:grid-cols-5 md:w-full p-5">
-                    {skills_tech_tags.map(tag => (
-                        <TagContainer className={""} tagName={tag} />
+                    {languageTags.map(tag => (
+                        <TagContainer textClass={""} className={"border-[var(--color-tag-4)] bg-[var(--color-tag-4-lighter)]/20"} tagName={tag} />
                     ))}
-                </div>
-            </div>
 
+                    {engineTags.map(tag => (
+                            <TagContainer className={"border-[var(--color-tag-2)] bg-[var(--color-tag-2-darker)]/20"} tagName={tag} />
+                    ))}
+
+                    {platformTags.map(tag => (
+                            <TagContainer className={"border-[var(--color-tag-1)] bg-[var(--color-tag-1-darker)]/20"} tagName={tag} />
+                    ))}
+
+                    {competenciesTags.map(tag => (
+                            <TagContainer className={"border-[var(--color-tag-3)] bg-[var(--color-tag-3-darker)]/20"} tagName={tag} />
+                    ))}
+
+                </div>
     </div>
+
 
 </>

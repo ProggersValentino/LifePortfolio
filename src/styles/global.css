@@ -26,6 +26,8 @@ body {
         color-scheme: dark;
         background-color: var(--charcoal);
     }
+
+
 }
 
 @layer components {
@@ -71,10 +73,10 @@ body {
     }
 
     .wood-dropdown{
-        background-color: var(--tree-bark);
-        border: 10px solid var(--soil-umber);
+        background-color: var(--color-surface);
+        border: 10px solid var(--color-surface-elevated);
         border-radius: var(--radius-sm);
-        border-top: 5px solid var(--soil-umber);
+        border-top: 5px solid var(--color-surface-elevated);
         top: 70%;
     }
 

@@ -4,13 +4,13 @@ import {HomeTitle} from "./TitleComponent.tsx";
 
 export function HeaderComponent() {
     return(
-        <div className={"pt-3 relative header sticky top-0 "}>
-            <header className={"grid grid-cols-3 "} style={{
+        <div className={"flex flex-wrap header sticky top-0 "}>
+            <header className={"flex flex-wrap"} style={{
             }}>
-                <div className={"pr-10"}>
+                <div className={"w-full"}>
                     <a href={"/"} className={""}>Peter Erbeni</a>
                 </div>
-                <div className={""}>
+                <div className={"w-full"}>
                     <HorizontalNavBar />
                 </div>
 
