@@ -2,8 +2,9 @@
 import tantrum from '../../assets/tANTrumMain.png'
 import NDMRCover from "../../assets/NDMRCover.png"
 import tortalWelfareCover from "../../assets/TortalWelfareCover.png"
-import gngImg from '../../assets/gngImg.png'
-import CCgif from '../../assets/gifs/ComboSystem_ComboContainer.gif'
+import gngImg from '../../assets/RR_Header.jpg'
+import RR_powerUpsGif from '../../assets/gifs/Steam page Gif(powerups and end screen).gif'
+import RR_verticalPost from '../../assets/RR_verticlePoster.png'
 
 /*make sure to always export data so it can be called without it will error */
 export const projects = [
@@ -16,9 +17,9 @@ export const projects = [
         techTags: ["Unreal Engine", "PC", "Steam"],
         skillTags: ["C++", "Blueprint", "Unreal", "PC", "Steam", "Git", "Gameplay", "Gameplay Tools"],
     },
-    contributions:["- \tDevelop and integrated combat abilities using the given animations",
-    "-\tDeveloped Player Combat", "-\tCreated an Arena Event System", "-\tMade designer friendly tooling to assist them with balancing game mechanics",
-    "-\tWorked with Programmers to create a code architecture design"],
+    contributions:["Develop and integrated combat abilities using the given animations",
+    "Developed Player Combat", "Created an Arena Event System", "Made designer friendly tooling to assist them with balancing game mechanics",
+    "Worked with Programmers to create a code architecture design"],
     outcomes:["This project was the first project I worked in C++ with Unreal Engine allowing me to grow my language tech stack. " +
     "Furthermore, this was the first melee-based game I’ve developed so it provided a lot of learning in how melee-based games like God Of War work behind the scenes to deliver that satisfying" +
     " gameplay experience.",
@@ -29,7 +30,13 @@ export const projects = [
         displayURIs: [{
             linkType: "img",
             link: gngImg
-        },],
+        },
+            {
+                linkType: "yt",
+                link: "YPE6fHLPLpU"
+            }
+
+        ],
     sections:
         [{
             pid: 1,
@@ -70,11 +77,11 @@ export const projects = [
             techTags: ["Unity", "PC"],
             skillTags: ["C#", "Unity", "SQL", "Database Management", "PC", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["-\tCreated and implemented 3 mini games and 3 sub-mini games",
-            "-\tImplemented a local database integration with the game to store and retrieve player data between sessions & scenes",
-            "-\tCreated tutorial system for the player tutorial ",
-            "-\tscene transition system",
-            "-\tManaged team through project management tools and delegating tasks to each discipline for completion"],
+        contributions:["Created and implemented 3 mini games and 3 sub-mini games",
+            "Implemented a local database integration with the game to store and retrieve player data between sessions & scenes",
+            "Created tutorial system for the player tutorial ",
+            "Scene transition system",
+            "Managed team through project management tools and delegating tasks to each discipline for completion"],
         outcomes:["The outcomes from this project was the learning process of incorporating mini games inside a main game as well as the first time implementing proper scene management " +
         "with having more than one scene active manually managing the loading and unloading of them to ensure proper structure is maintained. " +
         "Furthermore, I learn how to integrate a local database a game where key data that needs to be persistent across scenes and sessions like player gold can be stored and retrieved.",
@@ -115,14 +122,14 @@ export const projects = [
             techTags: ["Unity", "Meta Quest", "Meta Store", ],
             skillTags: ["C#", "Unity", "Voice Acting", "Virtual Reality", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["-\tCreated custom path generation system using splines",
-            "-\tDesigned initial VR concept",
-            "-\tIncorporated Event Bus and Message Bus Pattern in core architecture",
-            "-\tIncorporated Single Responsibility and Interface Segregation SOLID principles in core architecture",
-            "-\tVoice acted the main NPC character",
-            "-\tImplemented main mechanic of player shrinking and unshrinking onto towers",
-            "-\tImplemented basic enemy wave system",
-            "-\tImplemented Tutorial System for tutorialization"],
+        contributions:["Created custom path generation system using splines",
+            "Designed initial VR concept",
+            "Incorporated Event Bus and Message Bus Pattern in core architecture",
+            "Incorporated Single Responsibility and Interface Segregation SOLID principles in core architecture",
+            "Voice acted the main NPC character",
+            "Implemented main mechanic of player shrinking and unshrinking onto towers",
+            "Implemented basic enemy wave system",
+            "Implemented Tutorial System for tutorialization"],
         outcomes:["This project strengthened my basic skills to SOLID principles in " +
         "the code architecture more specifically on the Single Responsibility and Interface Segregation as well as continual improvement in my event bus / message bus pattern with static utility events.",
             "The project also achieved a showcase spot at QUT Open Day and Immersive festival where we had a dedicated section to show our game to upcoming university students and industry professionals"],
@@ -324,10 +331,10 @@ export const projects = [
             techTags: ["Unity", "MR", "Meta Quest"],
             skillTags: ["C#", "Unity", "MR", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["-\tImplemented Task System tooling to create a structured MR training experience",
-            "-\tImplemented a rope algorithm using Verlet integration to simulate a rope and rope like interactions",
-            "-\tImplemented a Questionnaire system to properly test players that go through the MR experience",
-            "-\tImplemented an Email Reporting system that sent an email to the trainer of all the questions that the player attempted",
+        contributions:["Implemented Task System tooling to create a structured MR training experience",
+            "Implemented a rope algorithm using Verlet integration to simulate a rope and rope like interactions",
+            "Implemented a Questionnaire system to properly test players that go through the MR experience",
+            "Implemented an Email Reporting system that sent an email to the trainer of all the questions that the player attempted",
             ],
         outcomes:["This project was one of my first Mixed Reality projects that I had the privilage to develop while working at Motion Curve. It taught me that" +
         " there is a time and place for creating systems from scratch and just finding packages online to use in projects as before I had some " +
@@ -348,7 +355,10 @@ export const projects = [
             [{
                 pid: 1,
                 title: "About Nitro Mixed Reality",
-                introP: "",
+                introP: "Nitro Sibir Development Charging Mixed Reality is a training module to teach and train miners the standard operating procedures " +
+                    "of how to charge a wall and blow it up. Throughout the MR experience, players would be tested on their knowledge of certain procedures" +
+                    "they would've learnt before going on the MR using either multiple choice, short response or terminolgy matching. After they completed the module" +
+                    "they then had to send a report to their trainer's email which outlined all the questions they completed and what their answers were for each one.",
                 uri: [{
                     linkType: "img",
                     link: ""
