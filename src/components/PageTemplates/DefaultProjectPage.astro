@@ -28,7 +28,11 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
 
     <div>
         {filteredProject.team.length == 1 ?
-        (<Title title="Solo Project" />)
+        (<div class="flex flex-wrap justify-center gap-2">
+            <div>
+                <Title className="text-center text-[1.2rem] font-bold" title="Solo Project"/>
+            </div>
+            </div>)
         :
             (
                     <div class="flex flex-wrap justify-center gap-2">
@@ -56,7 +60,7 @@ const filteredProject = projects.find((project)=> projectToShow === project.titl
                         filteredProject.displayURIs[0].linkType === "img" ? (
                             filteredProject.displayURIs[0].link === "" ? null : (
                                     <DefaultImg
-                                            divclassName="h-full max-w-[900px] shadow-sm border-[var(--soil-umber)] object-center border-[9px] rounded-2xl md:shadow-xl/50 shadow-[var(--sun-ray)]"
+                                            divclassName="h-full max-w-[900px] shadow-sm object-center rounded-2xl"
                                             source={filteredProject.displayURIs[0].link}
                                             alt={filteredProject.title}
                                     />

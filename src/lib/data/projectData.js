@@ -3,6 +3,7 @@ import tantrum from '../../assets/tANTrumMain.png'
 import NDMRCover from "../../assets/NDMRCover.png"
 import tortalWelfareCover from "../../assets/TortalWelfareCover.png"
 import gngImg from '../../assets/RR_Header.jpg'
+import SNImg from "../../assets/ScratchNetBanner.png"
 import RR_powerUpsGif from '../../assets/gifs/Steam page Gif(powerups and end screen).gif'
 import RR_verticalPost from '../../assets/RR_verticlePoster.png'
 
@@ -17,13 +18,14 @@ export const projects = [
         techTags: ["Unreal Engine", "PC", "Steam"],
         skillTags: ["C++", "Blueprint", "Unreal", "PC", "Steam", "Git", "Gameplay", "Gameplay Tools"],
     },
-    contributions:["Develop and integrated combat abilities using the given animations",
-    "Developed Player Combat", "Created an Arena Event System", "Made designer friendly tooling to assist them with balancing game mechanics",
-    "Worked with Programmers to create a code architecture design"],
-    outcomes:["This project was the first project I worked in C++ with Unreal Engine allowing me to grow my language tech stack. " +
-    "Furthermore, this was the first melee-based game I’ve developed so it provided a lot of learning in how melee-based games like God Of War work behind the scenes to deliver that satisfying" +
-    " gameplay experience.",
-        "Roman Rumble was also the first I’ve contributed in where it was released on steam for the world to see and play giving experience into how to release a game using steam."],
+    contributions:["Developed and integrated combat abilities using the given animations",
+        "Developed Player Combat",
+        "Created an Arena Event System",
+        "Made designer-friendly tooling to assist with balancing game mechanics",
+        "Worked with programmers to create a code architecture design"],
+    outcomes:["This project was my first experience working in C++ with Unreal Engine, allowing me to expand my technical skill set. " +
+    "Additionally, it was the first melee-based game I developed, providing valuable insight into how titles like God of War create a satisfying gameplay experience behind the scenes. " +
+    "Roman Rumble was also the first project I contributed to that was released on Steam, giving me hands-on experience in publishing a game for the world to see and play."],
     path: "/project/roman-rumble",
     title: "Roman Rumble",
     thumbnailPic: gngImg,
@@ -41,13 +43,11 @@ export const projects = [
         [{
             pid: 1,
             title: "About Roman Rumble",
-            introP: "Roman Rumble is a round by round close combat game fusing Roman Gladiator Grandure with WWE charm. " +
-                "The player plays a Gladiator who must appeal to the crowd through trial of combat where they must battle their" +
-                "foes in all out gladiator WWE brawl. " +
-                "During each round of combat, the crowd will throw the player items or powerups granted the player has appealed to them enough. " +
-                "Once the player wins through surviving 5 rounds of combat where each round gets harder and harder with more enemies" +
-                "My responsibilities fell on creating the player and its mechanics while picking up C++ for the " +
-                "first time.",
+            introP: "Roman Rumble is a round-based close combat game that combines Roman gladiator grandeur with WWE-style showmanship. " +
+                "The player takes on the role of a gladiator who must win over the crowd through intense battles against their foes in an all-out gladiator brawl. " +
+                "During each round, the crowd may throw items or power-ups to the player if they have impressed them enough. " +
+                "The goal is to survive five increasingly difficult rounds of combat. " +
+                "My responsibilities included developing the player and their mechanics while learning C++ for the first time.",
             uri: [{
                 linkType: "img",
                 link: ""
@@ -66,7 +66,60 @@ export const projects = [
             },
             ]
 },
+    {
+        id: 1,
+        team:["Peter Erbeni"],
+        tags:{
+            roleTag: ["Programmer", "Producer"],
+            projectTag: ["University"],
+            techTags: ["Unity", "PC"],
+            skillTags: ["C++", "Socket Programming", "Multi-threading", "PC", "Unity", "Git", "Package", "Game Networking", "Bit Manipulation", "Low-level",
+            ],
+        },
+        contributions:["Integrated and built custom DLLs into a unity game",
+            "Incorporated a client-hosted listen server architecture",
+            "Designed and integrated UDP packet-based systems using C++ socket programming to facilitate reliable connection like packet acknowledgement and delta compression",
+            "Debugged and maintained DLL code through Visual Studio Debugger"],
+        outcomes:["This was my first exposure to networking concepts for games in a low-level environment, providing an opportunity to expand my technical skill set in C++. " +
+        "By the end of the project, I had significantly solidified my C++ experience and gained a deeper understanding of managing both the stack and heap effectively. " +
+        "Additionally, I learned the basics of multi-threading and techniques for making code thread-safe to prevent deadlocks, data corruption, and inaccuracies. " +
+        "Finally, the project gave me a comprehensive understanding of how game networking is integrated across systems to ensure reliable connections."
+        ],
+        path: "/project/scratchnet",
+        title: "ScratchNet",
+        thumbnailPic: SNImg,
+        displayURIs: [{
+            linkType: "img",
+            link: SNImg
+        },
 
+        ],
+        sections:
+            [{
+                pid: 1,
+                title: "About",
+                introP: "ScratchNet is a custom networking package developed in C++ that can be integrated into Unity to connect 2–4 players over a local network developed over the course of 6 weeks. " +
+                    "It uses socket programming to manage UDP packets for both client and server communication, following a client-hosted listen server architecture. " +
+                    "In this setup, one client hosts the session as the server while other clients join, similar to implementations seen in games like Peak and Repo. " +
+                    "The system includes packet acknowledgment, CRC checking, delta packet compression, serialization, and client/server synchronization, enabling reliable communication between all players.",
+                uri: [{
+                    linkType: "img",
+                    link: ""
+                }],
+                p: ""
+            },
+                {
+                    pid: 2,
+                    title: "",
+                    introP: "",
+                    uri: [{
+                        linkType: "img",
+                        link: ""
+                    }],
+                    p: ""
+                },
+            ]
+    },
 
     {
         id: 1,
@@ -77,16 +130,16 @@ export const projects = [
             techTags: ["Unity", "PC"],
             skillTags: ["C#", "Unity", "SQL", "Database Management", "PC", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["Created and implemented 3 mini games and 3 sub-mini games",
-            "Implemented a local database integration with the game to store and retrieve player data between sessions & scenes",
-            "Created tutorial system for the player tutorial ",
-            "Scene transition system",
-            "Managed team through project management tools and delegating tasks to each discipline for completion"],
-        outcomes:["The outcomes from this project was the learning process of incorporating mini games inside a main game as well as the first time implementing proper scene management " +
-        "with having more than one scene active manually managing the loading and unloading of them to ensure proper structure is maintained. " +
-        "Furthermore, I learn how to integrate a local database a game where key data that needs to be persistent across scenes and sessions like player gold can be stored and retrieved.",
-            "Lastly, this project was the first real exposure to doing a producer role in managing a team, " +
-            "delegating tasks to them and ensuring that those tasks get done directing the overall direction of the game and how it should be completed. "],
+        contributions:["Created and implemented three mini-games and three sub-mini-games",
+            "Integrated a local database into the game to store and retrieve player data between sessions and scenes",
+            "Developed a tutorial system for player onboarding",
+            "Implemented a scene transition system",
+            "Managed the team using project management tools like Youtrack and delegated tasks across disciplines to ensure completion"],
+        outcomes:["The outcomes of this project included learning how to incorporate mini-games within a main game, as well as implementing proper scene management for the first time. " +
+        "This involved manually managing the loading and unloading of multiple active scenes to maintain a proper structure. " +
+        "Additionally, I learned how to integrate a local database into a game to store and retrieve key data, such as player gold, that needed to persist across scenes and sessions. " +
+        "Lastly, this project provided my first real experience in a producer role, managing a team, delegating tasks, and ensuring their completion while guiding the overall direction of the game."
+        ],
         path: "/project/tortal-welfare",
         title: "Tortal Welfare",
         thumbnailPic: tortalWelfareCover,
@@ -98,9 +151,9 @@ export const projects = [
             [{
                 pid: 1,
                 title: "About Tortal Welfare",
-                introP: "Turtle Welfare is an isometric, point and click game with a variety of simple minigames that the player experiences while learning about turtles. " +
-                    "Players have the option to take control of both a conservation ranger and a sea turtle, " +
-                    "switching between them, as the minigames completed in one perspective positively affect the other, making the difficulty of these minigames easier for the other perspective. ",
+                introP: "Turtle Welfare is an isometric point-and-click game featuring a variety of simple mini-games that teach players about turtles through interactive experiences. " +
+                    "Players can take control of both a conservation ranger and a sea turtle, switching between the two perspectives. " +
+                    "Mini-games completed in one perspective positively impact the other, reducing the difficulty and creating a connected, symbiotic gameplay experience",
                 uri: [{
                     linkType: "img",
                     link: ""
@@ -122,17 +175,18 @@ export const projects = [
             techTags: ["Unity", "Meta Quest", "Meta Store", ],
             skillTags: ["C#", "Unity", "Voice Acting", "Virtual Reality", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["Created custom path generation system using splines",
-            "Designed initial VR concept",
-            "Incorporated Event Bus and Message Bus Pattern in core architecture",
-            "Incorporated Single Responsibility and Interface Segregation SOLID principles in core architecture",
-            "Voice acted the main NPC character",
-            "Implemented main mechanic of player shrinking and unshrinking onto towers",
-            "Implemented basic enemy wave system",
-            "Implemented Tutorial System for tutorialization"],
-        outcomes:["This project strengthened my basic skills to SOLID principles in " +
-        "the code architecture more specifically on the Single Responsibility and Interface Segregation as well as continual improvement in my event bus / message bus pattern with static utility events.",
-            "The project also achieved a showcase spot at QUT Open Day and Immersive festival where we had a dedicated section to show our game to upcoming university students and industry professionals"],
+        contributions:["Created a custom path generation system using splines",
+            "Designed the initial VR concept",
+            "Integrated Event Bus and Message Bus patterns into the core architecture",
+            "Applied Single Responsibility and Interface Segregation SOLID principles within the core architecture",
+            "Voice-acted the main NPC character",
+            "Implemented the main mechanic allowing the player to shrink and unshrink onto towers",
+            "Developed a basic enemy wave system",
+            "Implemented a tutorial system for player onboarding"
+        ],
+        outcomes:["This project strengthened my foundational understanding of SOLID principles in code architecture, particularly Single Responsibility and Interface Segregation, while also improving my implementation of the Event Bus and Message Bus patterns using static utility events. " +
+        "The project was also showcased at the QUT Open Day and Immersive Festival, where we had a dedicated section to present our game to prospective university students and industry professionals."
+        ],
         path: "/project/tantrum",
         title: "tANTrum",
         thumbnailPic: tantrum,
@@ -148,9 +202,10 @@ export const projects = [
             [{
                 pid: 1,
                 title: "About tANTrum",
-                introP: "tANTrum is a VR game centred around tower-defence like gameplay where you’re a ghost that must protect your best friend (a living picnic basket called Basko) from being eaten alive from hungry ants. " +
-                    "You defend Basko by placing down towers but also get involved in the action through continual maintenance of towers when they break down and a personal weapon to help the defence. " +
-                    "This game was developed in Unity and deployed on the headset alone so that there was no requirement for cables.",
+                introP: "tANTrum is a VR tower-defense game where you play as a ghost tasked with protecting your best friend, a living picnic basket named Basko, from swarms of hungry ants. " +
+                    "You defend Basko by placing towers and actively participating in the action through repairing broken towers and using a personal weapon to aid in the defense. " +
+                    "The game was developed in Unity and deployed as a standalone VR experience, eliminating the need for cables."
+                ,
                 uri: [{
                     linkType: "img",
                     link: ""
@@ -331,19 +386,17 @@ export const projects = [
             techTags: ["Unity", "MR", "Meta Quest"],
             skillTags: ["C#", "Unity", "MR", "Git", "Gameplay", "Gameplay Tools"],
         },
-        contributions:["Implemented Task System tooling to create a structured MR training experience",
-            "Implemented a rope algorithm using Verlet integration to simulate a rope and rope like interactions",
-            "Implemented a Questionnaire system to properly test players that go through the MR experience",
-            "Implemented an Email Reporting system that sent an email to the trainer of all the questions that the player attempted",
+        contributions:["Implemented a Task System tool to create a structured MR training experience",
+            "Developed a rope algorithm using Verlet integration to simulate realistic rope behavior and interactions",
+            "Created a Questionnaire System to assess players during the MR training experience",
+            "Implemented an Email Reporting System that sent trainers a summary of all questions attempted by the player and their responses",
             ],
-        outcomes:["This project was one of my first Mixed Reality projects that I had the privilage to develop while working at Motion Curve. It taught me that" +
-        " there is a time and place for creating systems from scratch and just finding packages online to use in projects as before I had some " +
-        "stubbornness to where using packages takes away from learning and control over the system you’re trying to " +
-        "implement which it does but when you have limited time if the option is there it should be used so this opened my eyes to when packages should be used. " +
-            "delegating tasks to them and ensuring that those tasks get done directing the overall direction of the game and how it should be completed. ",
+        outcomes:["This project was one of my first Mixed Reality projects developed during my time at Motion Curve. It taught me the importance of balancing custom development with the use of existing packages. " +
+        "Previously, I believed that using external packages limited learning and control, but this experience showed me that when time and efficiency are crucial, leveraging reliable packages can be the smarter choice. " +
+        "It also enhanced my ability to manage time and make informed technical decisions.",
 
-        "Lastly, it taught me valuable skills how to properly break down a problem step by step and significantly simplifying the problem to be easily" +
-        " achieve as before my reliance of creating custom systems was based off tutorial videos of a similar implementation and then I would adjust it."],
+            "Lastly, this project strengthened my problem-solving skills by teaching me how to systematically break down complex problems into smaller, more achievable tasks. " +
+            "Before this, my approach relied heavily on adapting tutorial-based systems, but through this experience, I learned to independently simplify and design efficient solutions."],
         path: "/project/NDMR",
         title: "Nitro Development Charging Mixed Reality",
         thumbnailPic: NDMRCover,
@@ -355,10 +408,9 @@ export const projects = [
             [{
                 pid: 1,
                 title: "About Nitro Mixed Reality",
-                introP: "Nitro Sibir Development Charging Mixed Reality is a training module to teach and train miners the standard operating procedures " +
-                    "of how to charge a wall and blow it up. Throughout the MR experience, players would be tested on their knowledge of certain procedures" +
-                    "they would've learnt before going on the MR using either multiple choice, short response or terminolgy matching. After they completed the module" +
-                    "they then had to send a report to their trainer's email which outlined all the questions they completed and what their answers were for each one.",
+                introP: "Nitro Sibir Development: Charging Mixed Reality is a training module designed to teach miners the standard operating procedures for charging and detonating walls. " +
+                    "Throughout the MR experience, players are tested on their understanding of various procedures they learned beforehand using multiple-choice, short-answer, and terminology-matching questions. " +
+                    "After completing the module, a report is automatically sent to their trainer’s email, detailing each question attempted and the player’s responses.",
                 uri: [{
                     linkType: "img",
                     link: ""
