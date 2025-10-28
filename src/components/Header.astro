@@ -1,7 +1,7 @@
 ---
 import {HorizontalNavBar} from "../react-app/Components/VerticalNavBar";
 import DefaultImage from "./DefaultImage.astro";
-import image from "../assets/downloadIcon.png"
+import image from "../assets/worldNetwork.png"
 import Title from "./Title.astro";
 import resume from "../assets/documents/Peter_Erbeni_Resume_XR.pdf"
 ---
@@ -20,8 +20,8 @@ import resume from "../assets/documents/Peter_Erbeni_Resume_XR.pdf"
         </div>
 
         <div class="justify-self-end">
-           <a target="_blank" href={"https://drive.google.com/file/d/1L4Ejt7zPMym5xvl9k9M9fgT3UAhmur9z/view?usp=sharing"} className={""}>
-               <button class="flex flex-nowrap gap-2 py-0.5 px-2 cursor-pointer justify-center rounded-lg border-2 bg-[var(--color-info)]">
+           <a target="_blank" href={"https://drive.google.com/file/d/1L4Ejt7zPMym5xvl9k9M9fgT3UAhmur9z/view?usp=sharing"} className={"max-h-1"}>
+               <button class="flex flex-nowrap gap-2 py-0.5 px-2 cursor-pointer justify-center items-center rounded-lg border-2 bg-[var(--color-info)]">
                    <DefaultImage alt="download" divclassName="max-w-[20px]" source={image}/>
                    <Title className="font-bold" title="Resume" />
                </button>
