@@ -92,7 +92,10 @@ export const projects = [
             linkType: "img",
             link: SNImg
         },
-
+            {
+                linkType: "yt",
+                link: "FsBN_Iy5CbY"
+            },
         ],
         sections:
             [{
