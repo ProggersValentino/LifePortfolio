@@ -22,8 +22,8 @@ export function AllProjectDisplayPage(){
         <main>
             <DefaultTitle title={"My Life's Work"} className={""} />
 
-            <TagFilterSearch projectfilterTags={setProjectFilteredTags} roleFilteredTags={setRoleFilteredTags}
-            getterProjects={projectFilteredTags} getterRoles={roleFilteredTags} />
+            {/*<TagFilterSearch projectfilterTags={setProjectFilteredTags} roleFilteredTags={setRoleFilteredTags}
+            getterProjects={projectFilteredTags} getterRoles={roleFilteredTags} />*/}
             <div className="bg-[var(--color-surface)] rounded-xl py-7 h-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
             style={{
                 display: "grid",

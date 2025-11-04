@@ -18,9 +18,11 @@ export const projects = [
         techTags: ["Unreal Engine", "PC", "Steam"],
         skillTags: ["C++", "Blueprint", "Unreal", "PC", "Steam", "Git", "Gameplay", "Gameplay Tools"],
     },
-    contributions:["Developed and integrated combat abilities using the given animations",
-        "Developed Player Combat",
-        "Created an Arena Event System",
+    contributions:[
+        "Released on Steam achieving over 200 wishlists",
+        "Developed player systems specifically combat",
+        "Rapidly adapted upskilled to use Unreal Engine and C++",
+        "Worked closely with Playside to develop, refine, and implement feedback to improve the game's programming architecture",
         "Made designer-friendly tooling to assist with balancing game mechanics",
         "Worked with programmers to create a code architecture design"],
     outcomes:["This project was my first experience working in C++ with Unreal Engine, allowing me to expand my technical skill set. " +
@@ -46,8 +48,7 @@ export const projects = [
             introP: "Roman Rumble is a round-based close combat game that combines Roman gladiator grandeur with WWE-style showmanship. " +
                 "The player takes on the role of a gladiator who must win over the crowd through intense battles against their foes in an all-out gladiator brawl. " +
                 "During each round, the crowd may throw items or power-ups to the player if they have impressed them enough. " +
-                "The goal is to survive five increasingly difficult rounds of combat. " +
-                "My responsibilities included developing the player and their mechanics while learning C++ for the first time.",
+                "The goal is to survive five increasingly difficult rounds of combat. ",
             uri: [{
                 linkType: "img",
                 link: ""
