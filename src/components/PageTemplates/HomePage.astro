@@ -21,6 +21,7 @@ import {languageTags} from "../../lib/data/skills_techData.js"
 import {engineTags} from "../../lib/data/skills_techData.js"
 import {platformTags} from "../../lib/data/skills_techData.js"
 import {competenciesTags} from "../../lib/data/skills_techData.js"
+import {toolsTags} from "../../lib/data/skills_techData";
 const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes("GoldenChild"))
 
 ---
@@ -103,6 +104,10 @@ const goldenChildren = projects.filter(golden => golden.tags.projectTag.includes
 
                     {competenciesTags.map(tag => (
                             <TagContainer className={"border-[var(--color-tag-3)] bg-[var(--color-tag-3-darker)]/20"} tagName={tag} />
+                    ))}
+
+                    {toolsTags.map(tag => (
+                            <TagContainer className={"border-[var(--color-tag-5)] bg-[var(--color-tag-5-darker)]/20"} tagName={tag} />
                     ))}
 
                 </div>

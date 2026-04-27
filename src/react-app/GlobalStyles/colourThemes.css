@@ -80,5 +80,7 @@
     --color-tag-3-darker: #F4A62A;
     --color-tag-4: #BA68C8;  /* violet-purple, creative contrast */
     --color-tag-4-lighter: #AD4BBE;
+    --color-tag-5: #E57373;        /* soft coral red, balanced warm accent */
+    --color-tag-5-darker: #D65C5C;
 
 }

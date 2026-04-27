@@ -3,6 +3,7 @@ import tantrum from '../../assets/tANTrumMain.png'
 import NDMRCover from "../../assets/NDMRCover.png"
 import tortalWelfareCover from "../../assets/TortalWelfareCover.png"
 import gngImg from '../../assets/RR_Header.jpg'
+import ttiImg from '../../assets/totaltrrashIsland_banner.png'
 import SNImg from "../../assets/ScratchNetBanner.png"
 import RR_powerUpsGif from '../../assets/gifs/Steam page Gif(powerups and end screen).gif'
 import RR_verticalPost from '../../assets/RR_verticlePoster.png'
@@ -495,8 +496,64 @@ export const projects = [
                     p: "This was solved using some NPM packages and SMTP2Go as the main API to send it. This also required me to create a emailer which " +
                         "would store each attempt at a question in the given report format requested by the client. "
                 },
+
                 ]
     },
+    {
+    id: 6,
+    team:["Peter Erbeni", "Nathan Poulton", "Cody Collier", "Syafiqo Octaviano", "Kieron Saunders", "Carlin Ho"],
+    tags:{
+    roleTag: ["Programmer"],
+        projectTag: ["Game Jam"],
+        techTags: ["Unity", "PC"],
+        skillTags: ["C#", "Unity", "PC", "Git", "Gameplay", "Gameplay Tools", "Player Interaction"],
+},
+contributions:[
+    "Developed player movement system to incorporate fluidity in the player's movement",
+    "Developed sliding and ledge grab mechanics",
+    "Developed player interaction",
+    "Collaborated with other programmers on the game's programming architecture and system design",],
+    outcomes:["Total Trash Island was the first game jam where I got to work with more than 3 people in a group project. " +
+    "This project also got showcased briefly in the game jam showcase by Ubisoft."],
+    path: "/project/total-trash-island",
+    title: "Total Trash Island",
+    thumbnailPic: ttiImg,
+    displayURIs: [{
+    linkType: "img",
+    link: ttiImg
+},
+    {
+        linkType: "yt",
+        link: "XSzQ0-sopmk"
+    }
+
+],
+    sections:
+[{
+    pid: 1,
+    title: "About Total Trash Island",
+    introP: "Total Trash Island is a first person shooter developed during a 2 week game jam hosted by Ubisoft. It takes a creative spin " +
+    "off the Total Drama Island tv series where Chris McClean has hired you to clean up the intoxicated island created from all the waste dumping " +
+    "he's done to please his fans and get lots of money. Subsequently, Chris' waste dumping has mutated a bunch of the native wild life. So it is up to the player " +
+    "to dodge, run, slide, shoot, and collect to clean the island and rid it of all the trash.",
+    uri: [{
+        linkType: "img",
+        link: ""
+    }],
+    p: ""
+},
+    {
+        pid: 2,
+        title: "",
+        introP: "",
+        uri: [{
+            linkType: "img",
+            link: ""
+        }],
+        p: ""
+    },
+]
+},
 ]
 
 export const projectTags = ["University", "Motion Curve", "Game Jams", "VR", "GoldenChild", "Mixed Reality"]
